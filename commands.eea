@@ -1,0 +1,6 @@
+mkdisk >size=5 >path=/home/mia/Disco1.dsk
+fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion1 >size=1
+fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion2 >size=1
+fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion3 >size=1
+fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion4 >size=1
+rep >path=/home/mia/Disco1.dsk
