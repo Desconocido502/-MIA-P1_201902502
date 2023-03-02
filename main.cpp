@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <stdio.h>
 
 #include "nodo.h"
 #include "analizador/scanner.h"
@@ -8,7 +10,10 @@
 #include "struct.cpp"
 #include "mkdisk.cpp"
 #include "fdisk.cpp"
+#include "listaMount.cpp"
 #include "rep-exec.cpp"
+
+ListaMount *listaMount = new ListaMount();
 
 extern int yyparse();
 extern Nodo *raiz; //Root of tree

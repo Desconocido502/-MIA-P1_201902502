@@ -72,7 +72,14 @@ extern int yydebug;
     extension = 273,               /* extension  */
     ruta = 274,                    /* ruta  */
     cadena = 275,                  /* cadena  */
-    exitS = 276                    /* exitS  */
+    exitS = 276,                   /* exitS  */
+    fit = 277,                     /* fit  */
+    bf = 278,                      /* bf  */
+    ff = 279,                      /* ff  */
+    wf = 280,                      /* wf  */
+    del_ = 281,                    /* del_  */
+    add = 282,                     /* add  */
+    full = 283                     /* full  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -86,7 +93,7 @@ union YYSTYPE
     char text[400];
     class Nodo *nodo;
 
-#line 90 "parser.h"
+#line 97 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

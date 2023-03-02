@@ -15,8 +15,9 @@ string timeToString(time_t &t);
 void MKDISK(Nodo *raiz)
 {
 
-    //valores
+    // valores
     int size = 0;
+    char fit = 0;
     char unit = 0;
     string path = "";
 
@@ -24,10 +25,32 @@ void MKDISK(Nodo *raiz)
     for (it = raiz->hijos.begin(); it != raiz->hijos.end(); ++it)
     {
         if (it->tipo == "size")
-        {   
+        {
             size = stoi(it->valor);
-            if(size < 0){
+            if (size < 0)
+            {
                 cout << "ERROR: EL TAMAÑO DEL DISCO DEBE SER UN NUMERO POSITIVO Y MAYOR A CERO" << endl;
+                return;
+            }
+        }
+        else if (it->tipo == "fit")
+        {
+            fit = it->hijos.front().valor[0];
+            if (fit == 'b')
+            {
+                fit = 'B';
+            }
+            else if (fit == 'f')
+            {
+                fit = 'F';
+            }
+            else if (fit == 'w')
+            {
+                fit = 'W';
+            }
+            else
+            {
+                cout << "Error: Fit indicado erroneo\n";
                 return;
             }
         }
@@ -58,12 +81,12 @@ void MKDISK(Nodo *raiz)
 
     MBR masterboot;
     int totalSize = 0;
-    //Creacion del archivo
+    // Creacion del archivo
     crearArchivo(path);
 
-    //FECHA MBR
+    // FECHA MBR
     masterboot.mbr_date = time(nullptr);
-    //ID MBR
+    // ID MBR
     masterboot.mbr_disk_signature = getSignature();
 
     if (unit != 0)
@@ -85,15 +108,23 @@ void MKDISK(Nodo *raiz)
         totalSize = size * 1024;
     }
 
+    if (fit != 0)
+        masterboot.mbr_disk_fit = fit;
+    else
+        masterboot.mbr_disk_fit = 'F';
+
     // Inicializar las particiones en el MBR
     for (int i = 0; i < 4; i++)
     {
+        masterboot.mbr_partition[i].part_status = '0';
+        masterboot.mbr_partition[i].part_type = '0';
+        masterboot.mbr_partition[i].part_fit = '0';
         masterboot.mbr_partition[i].part_start = -1; //-1 como valor por default sin particion
         masterboot.mbr_partition[i].part_size = 0;
         strcpy(masterboot.mbr_partition[i].part_name, "");
     }
 
-    //Se escribe en el disco
+    // Se escribe en el disco
 
     string comando = "dd if=/dev/zero of=\"" + path + "\" bs=1024 count=" + to_string(totalSize);
     system(comando.c_str());
@@ -109,20 +140,16 @@ void MKDISK(Nodo *raiz)
 void crearArchivo(string path)
 {
     string aux = directorio(path);
-    string comando = "sudo mkdir -p \'" + aux + "\'"; //crea directorio
+    string comando = "sudo mkdir -p \'" + aux + "\'"; // crea directorio
     system(comando.c_str());
-    string comando2 = "sudo chmod -R 777 \'" + aux + "\'";//da permisos y legible por todas carpetas
+    string comando2 = "sudo chmod -R 777 \'" + aux + "\'"; // da permisos y legible por todas carpetas
     system(comando2.c_str());
     string arch = path;
     FILE *fp = fopen(arch.c_str(), "wb");
     if ((fp = fopen(arch.c_str(), "wb")))
-    {
         fclose(fp);
-    }
     else
-    {
         cout << "Error al crear el archivo" << endl;
-    }
 }
 
 string directorio(string direccion)
@@ -137,7 +164,6 @@ string directorio(string direccion)
     }
     return res;
 }
-
 
 string timeToString(time_t &t)
 {

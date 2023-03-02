@@ -48,6 +48,13 @@
 %token<text> ruta
 %token<text> cadena
 %token<text> exitS
+%token <text> fit
+%token <text> bf
+%token <text> ff
+%token <text> wf
+%token <text> del_
+%token <text> add
+%token <text> full
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -56,6 +63,7 @@
 %type <nodo> REP
 %type <nodo> SCRIPT
 %type <nodo> PARAMETRO_MK
+%type <nodo> AJUSTE
 %type <nodo> PARAMETRO_FK
 %type <nodo> PARAMETRO_R
 
@@ -111,6 +119,24 @@ PARAMETRO_MK:mayor sizeS igual entero
     |mayor path igual ruta
     {
         $$ = new Nodo("path", $4);
+    } 
+    |mayor fit igual AJUSTE 
+    {
+        $$ = new Nodo("fit", "");
+        $$->add(*$4);
+    };
+
+AJUSTE: bf 
+    {
+        $$ = new Nodo("ajuste", "bf");
+    }
+    | ff 
+    {
+        $$ = new Nodo("ajuste", "ff");
+    }
+    | wf 
+    {
+        $$ = new Nodo("ajuste", "wf");
     };
 
 FDISK: FDISK PARAMETRO_FK {
@@ -133,7 +159,19 @@ PARAMETRO_FK: PARAMETRO_MK
     |mayor name igual cadena
     {
         $$ = new Nodo("name", $4);
-    } 
+    }
+    |mayor type igual caracter
+    {
+        $$ = new Nodo("type", $4);
+    }
+    |mayor del_ full
+    {
+        $$ = new Nodo("delete", "full");
+    }
+    |mayor add igual entero
+    {
+        $$ = new Nodo("add", $4);
+    };
 
 SCRIPT: mayor path igual cadena {
         $$ = new Nodo("EXECUTE", "");
