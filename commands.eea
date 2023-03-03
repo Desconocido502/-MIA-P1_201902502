@@ -1,6 +1,15 @@
-mkdisk >size=5 >path=/home/mia/Disco1.dsk
-fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion1 >size=1
-fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion2 >size=1
-fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion3 >size=1
-fdisk >path=/home/mia/Disco1.dsk >unit=M >name=Particion4 >size=1
-rep >path=/home/mia/Disco1.dsk
+mkdisk >size=3000 >unit=K >path=/home/user/Disco1.dsk
+mkdisk >path=/home/user/Disco2.dsk >unit=K >size=3000
+mkdisk >size=5 >unit=M >path="/home/mis discos/Disco3.dsk"
+mkdisk >size=10 >path="/home/mis discos/Disco4.dsk"
+
+#Hola
+
+fdisk >size=300 >path=/home/user/Disco1.dsk >name=Particion1
+fdisk >type=E >path=/home/user/Disco2.dsk >unit=K >name=Particion2 >size=300
+fdisk >size=1 >type=L >unit=M >fit=bf >path="/home/mis discos/Disco3.dsk" >name="Particion3"
+fdisk >type=E >path=/home/user/Disco2.dsk >name=Particion3 >unit=K >size=200
+fdisk >delete=full >name="Particion1" >path=/home/user/Disco1.dsk
+fdisk >name=Particion1 >delete=full >path=/home/user/Disco1.dsk
+fdisk >add=-500 >size=10 >unit=K >path="/home/mis discos/Disco4.dsk" >name="Particion4"
+fdisk >add=1 >unit=M >path="/home/mis discos/Disco4.dsk" >name="Particion4"

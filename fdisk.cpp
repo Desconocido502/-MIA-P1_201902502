@@ -107,7 +107,7 @@ void FDISK(Nodo *raiz)
             }
             else
             {
-                cout << "Error: Fit indicado erroneo\n";
+                cout << "ERROR, FIT INCORRECTO (CORRECTAS BF,FF y WF)";
                 return;
             }
         }
@@ -170,9 +170,6 @@ void FDISK(Nodo *raiz)
             }
         }
     }
-
-    // CREACION DE LA PARTICION
-    //crearParticion(path, name, size, unit);
 }
 
 void crearParticionPrimaria(string direccion, string nombre, int size, char fit, char unit){
@@ -233,9 +230,9 @@ void crearParticionPrimaria(string direccion, string nombre, int size, char fit,
                         masterboot.mbr_partition[numParticion].part_type = 'P';
                         masterboot.mbr_partition[numParticion].part_fit = auxFit;
                         //start
-                        if(numParticion == 0){
+                        if(numParticion == 0){ //posicion de inicio
                             masterboot.mbr_partition[numParticion].part_start = sizeof(masterboot);
-                        }else{
+                        }else{ //de lo contrario tiene que ir a -1 para obtener la posicion de inicio de memoria y sumarle el tamaño del mismo para no escribir encima
                             masterboot.mbr_partition[numParticion].part_start = masterboot.mbr_partition[numParticion-1].part_start + masterboot.mbr_partition[numParticion-1].part_size;
                         }
                         masterboot.mbr_partition[numParticion].part_size = sizeBytes;
@@ -459,14 +456,8 @@ void deleteParticion(string direccion, string nombre, string typeDelete){
             if(opcion.compare("Y") == 0 || opcion.compare("y") == 0){
                 if(indice != -1){   //Si se encontro en las principales
                     if(!extendida){ //primaria
-                        if(typeDelete == "fast"){
-                            masterboot.mbr_partition[indice].part_status = '1';
-                            strcpy(masterboot.mbr_partition[indice].part_name, "");
-                            fseek(fp, 0, SEEK_SET);
-                            fwrite(&masterboot, sizeof(MBR), 1, fp);
-                            cout << "*Particion primaria eliminada*" << endl;
-
-                        }else{  //full
+                        if(typeDelete == "full"){
+                            //full
                             masterboot.mbr_partition[indice].part_status = '1';
                             strcpy(masterboot.mbr_partition[indice].part_name, "");
                             fseek(fp, 0, SEEK_SET);
@@ -476,13 +467,8 @@ void deleteParticion(string direccion, string nombre, string typeDelete){
                             cout << "*Particion primaria eliminada*" << endl;
                         }
                     }else{  //extendida
-                        if(typeDelete == "fast"){
-                            masterboot.mbr_partition[indice].part_status = '1';
-                            strcpy(masterboot.mbr_partition[indice].part_name, "");
-                            fseek(fp, 0, SEEK_SET);
-                            fwrite(&masterboot, sizeof(MBR), 1, fp);
-                            cout << "*Particion extendida eliminada*" << endl;
-                        }else{//full
+                        if(typeDelete == "full"){
+                            //full
                             masterboot.mbr_partition[indice].part_status = '1';
                             strcpy(masterboot.mbr_partition[indice].part_name,"");
                             fseek(fp, 0, SEEK_SET);
@@ -510,13 +496,8 @@ void deleteParticion(string direccion, string nombre, string typeDelete){
                             }
                         }
                         if(logica){
-                            if(typeDelete == "fast"){
-                                extendedBoot.part_status = '1';
-                                strcpy(extendedBoot.part_name, "");
-                                fseek(fp, ftell(fp)-sizeof(EBR), SEEK_SET);
-                                fwrite(&extendedBoot, sizeof(EBR), 1, fp);
-                                cout << "*Particion logica eliminada*" << endl;
-                            }else{  //full
+                            if(typeDelete == "full"){
+                                //full
                                 extendedBoot.part_status = '1';
                                 strcpy(extendedBoot.part_name, "");
                                 fseek(fp, ftell(fp)-sizeof(EBR), SEEK_SET);

@@ -79,7 +79,8 @@ extern int yydebug;
     wf = 280,                      /* wf  */
     del_ = 281,                    /* del_  */
     add = 282,                     /* add  */
-    full = 283                     /* full  */
+    full = 283,                    /* full  */
+    rmdisk = 284                   /* rmdisk  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -93,7 +94,7 @@ union YYSTYPE
     char text[400];
     class Nodo *nodo;
 
-#line 97 "parser.h"
+#line 98 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

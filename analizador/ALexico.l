@@ -43,13 +43,14 @@ Espacios (" "|"\r"|"\t"|"n")
 ">"                         {  return mayor;}
 "path"                      {  return path;}
 "="                         {  return igual;}
-"bf"                        {  return bf; }
-"ff"                        {  return ff; }
-"wf"                        {  return wf; }
+"bf"                        {  return bf;}
+"ff"                        {  return ff;}
+"wf"                        {  return wf;}
 "delete"                    {  return del_;}
 "add"                       {  return add;}
-"Full"                      {  return full; }
+"Full"                      {  return full;}
 "Exit"                      {  return exitS;}
+"rmdisk"                    {  return rmdisk;}
 {Entero}                    {  strcpy(yylval.text, yytext); return entero;}
 {Caracter}                  {  strcpy(yylval.text, yytext); return caracter;}
 {Cadena}                    {  strcpy(yylval.text, yytext); return cadena;}

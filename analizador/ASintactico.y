@@ -55,6 +55,7 @@
 %token <text> del_
 %token <text> add
 %token <text> full
+%token <text> rmdisk
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -66,6 +67,7 @@
 %type <nodo> AJUSTE
 %type <nodo> PARAMETRO_FK
 %type <nodo> PARAMETRO_R
+%type <nodo> RMDISK
 
 %start INICIO
 %%
@@ -92,6 +94,10 @@ COMANDO:mkdisk MKDISK
     }
     |exitS{
         $$ = new Nodo("EXIT", "");
+    }
+    |RMDISK
+    {
+        $$ = $1;
     };
     
 
@@ -164,7 +170,7 @@ PARAMETRO_FK: PARAMETRO_MK
     {
         $$ = new Nodo("type", $4);
     }
-    |mayor del_ full
+    |mayor del_ igual full
     {
         $$ = new Nodo("delete", "full");
     }
@@ -200,4 +206,17 @@ PARAMETRO_R: mayor path igual cadena
     |mayor path igual ruta
     {
         $$ = new Nodo("path", $4);    
+    };
+
+RMDISK: rmdisk mayor path igual ruta
+    {
+        $$ = new Nodo("RMDISK", "");
+        Nodo *ruta = new Nodo("path", $5);
+        $$->add(*ruta);
+    }
+    | rmdisk mayor path igual cadena 
+    {
+        $$ = new Nodo("RMDISK", "");
+        Nodo *ruta = new Nodo("path", $5);
+        $$->add(*ruta);
     };

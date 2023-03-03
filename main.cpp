@@ -9,6 +9,7 @@
 
 #include "struct.cpp"
 #include "mkdisk.cpp"
+#include "rmdisk.cpp"
 #include "fdisk.cpp"
 #include "listaMount.cpp"
 #include "rep-exec.cpp"
@@ -67,5 +68,7 @@ void reconocerComando(Nodo *root){
     }else if(root->tipo == "FDISK"){
         Nodo n = root->hijos.front();
         FDISK(&n);  
+    }else if(root->tipo == "RMDISK"){
+        RMDISK(root);
     }
 }
