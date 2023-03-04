@@ -292,7 +292,7 @@ MKFS: MKFS PARAM_MKFS {
 
 PARAM_MKFS:mayor id igual identificador 
     { 
-        $$ = new Nodo("id", $3); 
+        $$ = new Nodo("id", $4); 
     }
     |mayor type igual full 
     { 

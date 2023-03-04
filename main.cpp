@@ -14,6 +14,7 @@
 #include "listaMount.cpp"
 #include "mount_unmount.cpp"
 #include "rep-exec.cpp"
+#include "mkfs.cpp"
 
 ListaMount *listaMount = new ListaMount();
 
@@ -95,5 +96,10 @@ void reconocerComando(Nodo *root)
     else if (raiz->tipo == "UNMOUNT")
     {
         UNMOUNT(raiz);
+    }
+    else if (raiz->tipo == "MKFS")
+    {
+        Nodo n = raiz->hijos.front();
+        MKFS(&n);
     }
 }

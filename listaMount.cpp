@@ -142,6 +142,8 @@ string ListaMount:: direccion(string id){
 
 NodoMount* ListaMount:: getMount(string id){
     NodoMount *aux = primero;
+    //cout << "idGM: " << id << endl;
+    //cout << "02" << aux->num << split_txt(aux->direccion, '/') << endl;
     while(aux != NULL){
         string tempID = "02" + to_string(aux->num) + split_txt(aux->direccion, '/'); //nombreDisco
         if(id == tempID){

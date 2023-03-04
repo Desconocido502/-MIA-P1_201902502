@@ -1848,7 +1848,7 @@ yyreduce:
   case 47: /* PARAM_MKFS: mayor id igual identificador  */
 #line 294 "ASintactico.y"
     { 
-        (yyval.nodo) = new Nodo("id", (yyvsp[-1].text)); 
+        (yyval.nodo) = new Nodo("id", (yyvsp[0].text)); 
     }
 #line 1854 "parser.cpp"
     break;
