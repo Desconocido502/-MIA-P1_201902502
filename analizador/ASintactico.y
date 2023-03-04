@@ -56,6 +56,13 @@
 %token <text> add
 %token <text> full
 %token <text> rmdisk
+%token <text> mount
+%token <text> unmount
+%token <text> id
+%token <text> mkfs
+%token <text> fs
+%token <text> fs2
+%token <text> fs3
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -68,6 +75,11 @@
 %type <nodo> PARAMETRO_FK
 %type <nodo> PARAMETRO_R
 %type <nodo> RMDISK
+%type <nodo> MOUNT
+%type <nodo> UNMOUNT
+%type <nodo> PARAMETRO_M
+%type <nodo> MKFS
+%type <nodo> PARAM_MKFS
 
 %start INICIO
 %%
@@ -98,6 +110,20 @@ COMANDO:mkdisk MKDISK
     |RMDISK
     {
         $$ = $1;
+    }
+    |UNMOUNT
+    {
+        $$ = $1;
+    }
+    |mount MOUNT
+    {
+        $$ = new Nodo("MOUNT", "");
+        $$->add(*$2);
+    }
+    |mkfs MKFS
+    {
+        $$ = new Nodo("MKFS", "");
+        $$->add(*$2);
     };
     
 
@@ -219,4 +245,64 @@ RMDISK: rmdisk mayor path igual ruta
         $$ = new Nodo("RMDISK", "");
         Nodo *ruta = new Nodo("path", $5);
         $$->add(*ruta);
+    };
+
+MOUNT: MOUNT PARAMETRO_M 
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    | PARAMETRO_M {
+        $$ = new Nodo("PARAMETRO", "");
+        $$->add(*$1);
+    };
+
+PARAMETRO_M:mayor path igual cadena
+    {
+        $$ = new Nodo("path", $4);
+    }
+    |mayor path igual ruta 
+    {
+        $$ = new Nodo("path", $4);
+    }
+    |mayor name igual identificador
+    {
+        $$ = new Nodo("name", $4);
+    }
+    |mayor name igual cadena
+    {
+        $$ = new Nodo("name", $4);
+    };
+
+UNMOUNT:unmount mayor id igual identificador
+    {
+        $$ = new Nodo("UNMOUNT", "");
+        Nodo *n = new Nodo("id", $5);
+        $$->add(*n);
+    };
+
+MKFS: MKFS PARAM_MKFS {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    | PARAM_MKFS {
+        $$ = new Nodo("PARAMETRO", "");
+        $$->add(*$1);
+    };
+
+PARAM_MKFS:mayor id igual identificador 
+    { 
+        $$ = new Nodo("id", $3); 
+    }
+    |mayor type igual full 
+    { 
+        $$ = new Nodo("type", "full"); 
+    }
+    |mayor fs igual fs2 
+    { 
+        $$ = new Nodo("fs", "2fs"); 
+    }
+    |mayor fs igual fs3 
+    { 
+        $$ = new Nodo("fs", "3fs"); 
     };

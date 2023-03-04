@@ -80,7 +80,14 @@ extern int yydebug;
     del_ = 281,                    /* del_  */
     add = 282,                     /* add  */
     full = 283,                    /* full  */
-    rmdisk = 284                   /* rmdisk  */
+    rmdisk = 284,                  /* rmdisk  */
+    mount = 285,                   /* mount  */
+    unmount = 286,                 /* unmount  */
+    id = 287,                      /* id  */
+    mkfs = 288,                    /* mkfs  */
+    fs = 289,                      /* fs  */
+    fs2 = 290,                     /* fs2  */
+    fs3 = 291                      /* fs3  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -94,7 +101,7 @@ union YYSTYPE
     char text[400];
     class Nodo *nodo;
 
-#line 98 "parser.h"
+#line 105 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

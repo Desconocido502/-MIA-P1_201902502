@@ -31,26 +31,33 @@ Espacios (" "|"\r"|"\t"|"n")
 %%
 
 "#"                         {  BEGIN ComentarioSimple; }
-"fdisk"                     {  return fdisk;}
-"mkdisk"                    {  return mkdisk;}
-"rep"                       {  return rep;}
-"execute"                   {  return execute;}
-"size"                      {  return sizeS;}
-"unit"                      {  return unit;}
-"name"                      {  return name;}
-"type"                      {  return type;}
-"fit"                       {  return fit;}
-">"                         {  return mayor;}
-"path"                      {  return path;}
-"="                         {  return igual;}
-"bf"                        {  return bf;}
-"ff"                        {  return ff;}
-"wf"                        {  return wf;}
-"delete"                    {  return del_;}
-"add"                       {  return add;}
-"Full"                      {  return full;}
-"Exit"                      {  return exitS;}
-"rmdisk"                    {  return rmdisk;}
+"fdisk"                     {  return fdisk; }
+"mkdisk"                    {  return mkdisk; }
+"rep"                       {  return rep; }
+"execute"                   {  return execute; }
+"size"                      {  return sizeS; }
+"unit"                      {  return unit; }
+"name"                      {  return name; }
+"type"                      {  return type; }
+"fit"                       {  return fit; }
+">"                         {  return mayor; }
+"path"                      {  return path; }
+"="                         {  return igual; }
+"bf"                        {  return bf; }
+"ff"                        {  return ff; }
+"wf"                        {  return wf; }
+"delete"                    {  return del_; }
+"add"                       {  return add; }
+"Full"                      {  return full; }
+"Exit"                      {  return exitS; }
+"rmdisk"                    {  return rmdisk; }
+"mount"                     {  return mount; }
+"unmount"                   {  return unmount; }
+"id"                        {  return id; }
+"fs"                        {  return fs; }
+"2fs"                       {  return fs2; }
+"3fs"                       {  return fs3; }
+"mkfs"                      {  return mkfs; }
 {Entero}                    {  strcpy(yylval.text, yytext); return entero;}
 {Caracter}                  {  strcpy(yylval.text, yytext); return caracter;}
 {Cadena}                    {  strcpy(yylval.text, yytext); return cadena;}

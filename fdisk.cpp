@@ -958,6 +958,7 @@ bool existeParticion(string direccion, string nombre){
     return false;
 }
 
+//Devuelve un numero en caso de que exista una particion primaria o extendida en un disco
 int buscarParticionPE(string direccion, string nombre){
     FILE *fp;
     if((fp = fopen(direccion.c_str(),"rb+"))){
@@ -975,6 +976,7 @@ int buscarParticionPE(string direccion, string nombre){
     return -1;
 }
 
+//Se retorna el byte donde se inicia la particion logica si es que existe
 int buscarParticionL(string direccion, string nombre){
     FILE *fp;
     if((fp = fopen(direccion.c_str(),"rb+"))){
