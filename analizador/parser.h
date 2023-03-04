@@ -87,7 +87,25 @@ extern int yydebug;
     mkfs = 288,                    /* mkfs  */
     fs = 289,                      /* fs  */
     fs2 = 290,                     /* fs2  */
-    fs3 = 291                      /* fs3  */
+    fs3 = 291,                     /* fs3  */
+    login = 292,                   /* login  */
+    logout = 293,                  /* logout  */
+    pausa = 294,                   /* pausa  */
+    usuario = 295,                 /* usuario  */
+    password = 296,                /* password  */
+    pwd = 297,                     /* pwd  */
+    rutaRep = 298,                 /* rutaRep  */
+    disk = 299,                    /* disk  */
+    inode = 300,                   /* inode  */
+    journaling = 301,              /* journaling  */
+    block = 302,                   /* block  */
+    bm_inode = 303,                /* bm_inode  */
+    bm_block = 304,                /* bm_block  */
+    tree = 305,                    /* tree  */
+    sb = 306,                      /* sb  */
+    fileRep = 307,                 /* fileRep  */
+    ls = 308,                      /* ls  */
+    mbr = 309                      /* mbr  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -101,7 +119,7 @@ union YYSTYPE
     char text[400];
     class Nodo *nodo;
 
-#line 105 "parser.h"
+#line 123 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

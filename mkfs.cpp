@@ -10,6 +10,7 @@ using namespace std;
 extern ListaMount *listaMount;
 
 void formatearEXT2(int inicio, int tamano, string direccion);
+void formatearEXT3(int inicio, int tamano, string direccion);
 
 void MKFS(Nodo *raiz)
 {
@@ -42,7 +43,7 @@ void MKFS(Nodo *raiz)
     if (id != "")
     { // Parametro obligatorio
         //cout << "id: " << id << endl;
-        NodoMount *aux = listaMount->getMount(id); //!hay que revisar el codigo de aqui
+        NodoMount *aux = listaMount->getMount(id); 
         if (aux != NULL)
         {
             int indice = buscarParticionPE(aux->direccion, aux->nombre);
@@ -56,8 +57,8 @@ void MKFS(Nodo *raiz)
                 if (fs == 2)
                     formatearEXT2(inicio, tamano, aux->direccion);
                 else
-                    cout << "Formato EXT3" << endl;
-                // formatearEXT3(inicio,tamano,aux->direccion);
+                    //cout << "Formato EXT3" << endl;
+                    formatearEXT3(inicio,tamano,aux->direccion);
                 fclose(fp);
             }
             else
@@ -196,7 +197,7 @@ void formatearEXT2(int inicio, int tamano, string direccion)
 void formatearEXT3(int inicio, int tamano, string direccion)
 {
     double n = (tamano - static_cast<int>(sizeof(SuperBloque))) / (4 + static_cast<int>(sizeof(InodoTable)) + 3 * static_cast<int>(sizeof(BloqueArchivo)));
-    int num_estructuras = static_cast<int>(floor(n)); // Bitmap indos
+    int num_estructuras = static_cast<int>(floor(n)); // Bitmap inodos
     int num_bloques = 3 * num_estructuras;            // Bitmap bloques
     int super_size = static_cast<int>(sizeof(SuperBloque));
     int journal_size = static_cast<int>(sizeof(Journal)) * num_estructuras;

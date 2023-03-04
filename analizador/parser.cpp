@@ -156,23 +156,43 @@ enum yysymbol_kind_t
   YYSYMBOL_fs = 34,                        /* fs  */
   YYSYMBOL_fs2 = 35,                       /* fs2  */
   YYSYMBOL_fs3 = 36,                       /* fs3  */
-  YYSYMBOL_YYACCEPT = 37,                  /* $accept  */
-  YYSYMBOL_INICIO = 38,                    /* INICIO  */
-  YYSYMBOL_COMANDO = 39,                   /* COMANDO  */
-  YYSYMBOL_MKDISK = 40,                    /* MKDISK  */
-  YYSYMBOL_PARAMETRO_MK = 41,              /* PARAMETRO_MK  */
-  YYSYMBOL_AJUSTE = 42,                    /* AJUSTE  */
-  YYSYMBOL_FDISK = 43,                     /* FDISK  */
-  YYSYMBOL_PARAMETRO_FK = 44,              /* PARAMETRO_FK  */
-  YYSYMBOL_SCRIPT = 45,                    /* SCRIPT  */
-  YYSYMBOL_REP = 46,                       /* REP  */
-  YYSYMBOL_PARAMETRO_R = 47,               /* PARAMETRO_R  */
-  YYSYMBOL_RMDISK = 48,                    /* RMDISK  */
-  YYSYMBOL_MOUNT = 49,                     /* MOUNT  */
-  YYSYMBOL_PARAMETRO_M = 50,               /* PARAMETRO_M  */
-  YYSYMBOL_UNMOUNT = 51,                   /* UNMOUNT  */
-  YYSYMBOL_MKFS = 52,                      /* MKFS  */
-  YYSYMBOL_PARAM_MKFS = 53                 /* PARAM_MKFS  */
+  YYSYMBOL_login = 37,                     /* login  */
+  YYSYMBOL_logout = 38,                    /* logout  */
+  YYSYMBOL_pausa = 39,                     /* pausa  */
+  YYSYMBOL_usuario = 40,                   /* usuario  */
+  YYSYMBOL_password = 41,                  /* password  */
+  YYSYMBOL_pwd = 42,                       /* pwd  */
+  YYSYMBOL_rutaRep = 43,                   /* rutaRep  */
+  YYSYMBOL_disk = 44,                      /* disk  */
+  YYSYMBOL_inode = 45,                     /* inode  */
+  YYSYMBOL_journaling = 46,                /* journaling  */
+  YYSYMBOL_block = 47,                     /* block  */
+  YYSYMBOL_bm_inode = 48,                  /* bm_inode  */
+  YYSYMBOL_bm_block = 49,                  /* bm_block  */
+  YYSYMBOL_tree = 50,                      /* tree  */
+  YYSYMBOL_sb = 51,                        /* sb  */
+  YYSYMBOL_fileRep = 52,                   /* fileRep  */
+  YYSYMBOL_ls = 53,                        /* ls  */
+  YYSYMBOL_mbr = 54,                       /* mbr  */
+  YYSYMBOL_YYACCEPT = 55,                  /* $accept  */
+  YYSYMBOL_INICIO = 56,                    /* INICIO  */
+  YYSYMBOL_COMANDO = 57,                   /* COMANDO  */
+  YYSYMBOL_MKDISK = 58,                    /* MKDISK  */
+  YYSYMBOL_PARAMETRO_MK = 59,              /* PARAMETRO_MK  */
+  YYSYMBOL_AJUSTE = 60,                    /* AJUSTE  */
+  YYSYMBOL_FDISK = 61,                     /* FDISK  */
+  YYSYMBOL_PARAMETRO_FK = 62,              /* PARAMETRO_FK  */
+  YYSYMBOL_SCRIPT = 63,                    /* SCRIPT  */
+  YYSYMBOL_REP = 64,                       /* REP  */
+  YYSYMBOL_PARAMETRO_R = 65,               /* PARAMETRO_R  */
+  YYSYMBOL_RMDISK = 66,                    /* RMDISK  */
+  YYSYMBOL_MOUNT = 67,                     /* MOUNT  */
+  YYSYMBOL_PARAMETRO_M = 68,               /* PARAMETRO_M  */
+  YYSYMBOL_UNMOUNT = 69,                   /* UNMOUNT  */
+  YYSYMBOL_MKFS = 70,                      /* MKFS  */
+  YYSYMBOL_PARAM_MKFS = 71,                /* PARAM_MKFS  */
+  YYSYMBOL_LOGIN = 72,                     /* LOGIN  */
+  YYSYMBOL_PARAM_LOGIN = 73                /* PARAM_LOGIN  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -289,7 +309,7 @@ typedef int yytype_uint16;
 
 
 /* Stored state numbers (used for stacks). */
-typedef yytype_int8 yy_state_t;
+typedef yytype_uint8 yy_state_t;
 
 /* State numbers in computations.  */
 typedef int yy_state_fast_t;
@@ -498,21 +518,21 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  34
+#define YYFINAL  40
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   106
+#define YYLAST   151
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  37
+#define YYNTOKENS  55
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  17
+#define YYNNTS  19
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  50
+#define YYNRULES  76
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  102
+#define YYNSTATES  142
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   291
+#define YYMAXUTOK   309
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -555,19 +575,22 @@ static const yytype_int8 yytranslate[] =
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
       25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36
+      35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
+      45,    46,    47,    48,    49,    50,    51,    52,    53,    54
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,    87,    87,    89,    94,    98,   102,   107,   110,   114,
-     118,   123,   130,   134,   139,   143,   147,   151,   155,   161,
-     165,   169,   174,   178,   183,   187,   191,   195,   199,   203,
-     208,   213,   219,   223,   228,   232,   237,   243,   250,   255,
-     260,   264,   268,   272,   277,   284,   288,   293,   297,   301,
-     305
+       0,   107,   107,   109,   114,   118,   119,   124,   125,   126,
+     127,   132,   137,   142,   143,   146,   150,   155,   156,   157,
+     158,   159,   164,   165,   166,   168,   172,   177,   178,   179,
+     180,   181,   182,   184,   189,   195,   199,   204,   205,   206,
+     207,   208,   209,   210,   211,   212,   213,   214,   215,   216,
+     217,   218,   219,   221,   227,   234,   239,   244,   245,   246,
+     247,   249,   256,   260,   265,   266,   267,   268,   270,   275,
+     281,   282,   283,   284,   285,   286,   287
 };
 #endif
 
@@ -587,10 +610,13 @@ static const char *const yytname[] =
   "execute", "fdisk", "mayor", "path", "igual", "entero", "txt", "sizeS",
   "unit", "type", "name", "caracter", "identificador", "extension", "ruta",
   "cadena", "exitS", "fit", "bf", "ff", "wf", "del_", "add", "full",
-  "rmdisk", "mount", "unmount", "id", "mkfs", "fs", "fs2", "fs3",
-  "$accept", "INICIO", "COMANDO", "MKDISK", "PARAMETRO_MK", "AJUSTE",
-  "FDISK", "PARAMETRO_FK", "SCRIPT", "REP", "PARAMETRO_R", "RMDISK",
-  "MOUNT", "PARAMETRO_M", "UNMOUNT", "MKFS", "PARAM_MKFS", YY_NULLPTR
+  "rmdisk", "mount", "unmount", "id", "mkfs", "fs", "fs2", "fs3", "login",
+  "logout", "pausa", "usuario", "password", "pwd", "rutaRep", "disk",
+  "inode", "journaling", "block", "bm_inode", "bm_block", "tree", "sb",
+  "fileRep", "ls", "mbr", "$accept", "INICIO", "COMANDO", "MKDISK",
+  "PARAMETRO_MK", "AJUSTE", "FDISK", "PARAMETRO_FK", "SCRIPT", "REP",
+  "PARAMETRO_R", "RMDISK", "MOUNT", "PARAMETRO_M", "UNMOUNT", "MKFS",
+  "PARAM_MKFS", "LOGIN", "PARAM_LOGIN", YY_NULLPTR
 };
 
 static const char *
@@ -600,7 +626,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-11)
+#define YYPACT_NINF (-25)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -614,17 +640,21 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -3,     1,     8,    10,    16,   -11,    33,    39,    48,    49,
-      57,   -11,   -11,   -11,    -2,     1,   -11,    13,     8,   -11,
-      17,   -11,    21,   -11,    16,   -11,    50,    -1,    39,   -11,
-      27,   -10,    49,   -11,   -11,    51,    52,    53,    54,   -11,
-      55,   -11,    56,    58,    59,    60,    61,   -11,    62,    63,
-      64,   -11,    65,    66,    67,    68,   -11,    12,    69,    70,
-      14,    22,    25,    71,    -8,    38,    72,    30,    32,    -4,
-      73,    74,    75,    18,   -11,   -11,   -11,   -11,   -11,   -11,
-     -11,   -11,   -11,   -11,   -11,   -11,   -11,   -11,   -11,   -11,
-     -11,   -11,   -11,   -11,   -11,   -11,   -11,   -11,   -11,   -11,
-     -11,   -11
+      -3,     2,     4,    22,    26,   -25,    33,    43,    49,    76,
+      77,   -25,   -25,    85,   -25,   -25,   -25,    39,     2,   -25,
+      -1,     4,   -25,    78,   -25,    31,   -25,    26,   -25,    79,
+      17,    43,   -25,    57,   -10,    76,   -25,   -24,    77,   -25,
+     -25,    81,    82,    83,    84,   -25,    86,    87,    88,    89,
+     -25,    90,    91,    92,    93,    94,   -25,    95,    96,    97,
+     -25,    98,    99,   100,   101,   -25,   102,   103,   104,   -25,
+      29,   105,    72,    -4,    35,    18,   106,    40,    55,   108,
+      -7,    66,   107,    58,    60,    21,   109,   110,   111,    46,
+     112,    56,    -5,   -25,   -25,   -25,   -25,   -25,   -25,   -25,
+     -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,
+     -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,
+     -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,
+     -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,   -25,
+     -25,   -25
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -633,63 +663,77 @@ static const yytype_int8 yypact[] =
 static const yytype_int8 yydefact[] =
 {
        0,     0,     0,     0,     0,     7,     0,     0,     0,     0,
-       0,     2,     8,     9,     0,     3,    13,     0,     6,    33,
-       0,     5,     0,    24,     4,    23,     0,     0,    10,    39,
-       0,     0,    11,    46,     1,     0,     0,     0,     0,    12,
-       0,    32,     0,     0,     0,     0,     0,    22,     0,     0,
-       0,    38,     0,     0,     0,     0,    45,     0,     0,     0,
+       0,    13,    14,     0,     2,     8,     9,     0,     3,    16,
+       0,     6,    36,     0,     5,     0,    27,     4,    26,     0,
+       0,    10,    56,     0,     0,    11,    63,     0,    12,    69,
+       1,     0,     0,     0,     0,    15,     0,     0,     0,     0,
+      35,     0,     0,     0,     0,     0,    25,     0,     0,     0,
+      55,     0,     0,     0,     0,    62,     0,     0,     0,    68,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,    17,    16,    14,    15,    19,    20,
-      21,    18,    35,    34,    31,    30,    27,    25,    26,    28,
-      29,    36,    37,    41,    40,    42,    43,    44,    48,    47,
-      49,    50
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,    20,    19,    17,    18,    22,    23,    24,
+      21,    38,    37,    43,    44,    45,    46,    47,    48,    49,
+      50,    51,    52,    42,    41,    40,    39,    34,    33,    30,
+      28,    29,    31,    32,    53,    54,    58,    57,    59,    60,
+      61,    65,    64,    66,    67,    76,    70,    71,    72,    73,
+      75,    74
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -11,   -11,   -11,   -11,     4,   -11,   -11,    76,   -11,   -11,
-      77,   -11,   -11,    78,   -11,   -11,    46
+     -25,   -25,   -25,   -25,     5,   -25,   -25,   113,   -25,   -25,
+     114,   -25,   -25,   115,   -25,   -25,   116,   -25,    80
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,    10,    11,    15,    23,    81,    24,    25,    21,    18,
-      19,    12,    28,    29,    13,    32,    33
+       0,    13,    14,    18,    26,   100,    27,    28,    24,    21,
+      22,    15,    31,    32,    16,    35,    36,    38,    39
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
    positive, shift that token.  If negative, reduce the rule whose
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
-static const yytype_int8 yytable[] =
+static const yytype_uint8 yytable[] =
 {
-       1,     2,     3,     4,    53,    16,    35,    49,    14,    87,
-      36,    37,    88,    95,    50,    17,    96,    20,     5,    39,
-      38,    40,    54,    22,    55,    42,     6,     7,     8,    35,
-       9,    74,    75,    36,    37,    43,    44,    78,    79,    80,
-      26,    82,    83,    38,    84,    85,    27,    45,    46,    91,
-      92,    93,    94,   100,   101,    30,    31,    34,    48,    52,
-      57,    58,    59,    60,    61,    62,    89,    63,    64,    65,
-      66,    67,    68,    69,    70,    71,    72,    73,    56,    76,
-       0,     0,    90,     0,     0,     0,    77,    86,     0,     0,
-      97,     0,    99,     0,     0,    41,     0,     0,     0,     0,
-      47,     0,    98,     0,     0,     0,    51
+       1,     2,     3,     4,    62,   138,    19,    46,    66,    17,
+     120,    20,   139,   121,    47,   140,    67,    68,     5,    97,
+      98,    99,    63,    45,    64,    58,     6,     7,     8,    23,
+       9,    48,    59,    25,    10,    11,    12,   141,   128,    41,
+      29,   129,    49,    42,    43,    52,    53,    41,    93,    94,
+      30,    42,    43,    44,   101,   102,    33,    54,    55,   115,
+     116,    44,   103,   104,   105,   106,   107,   108,   109,   110,
+     111,   112,   113,   136,   117,   118,   137,   124,   125,   126,
+     127,   133,   134,    34,    37,    40,    51,    57,    96,    61,
+      70,    71,    72,    73,   122,    74,    75,    76,    77,    78,
+      79,    80,    81,    82,    83,    84,    85,    86,    87,    88,
+      89,    90,    91,    92,     0,    95,     0,   123,    69,     0,
+       0,     0,     0,   114,   119,     0,   130,     0,   132,   135,
+       0,     0,     0,     0,     0,    50,     0,     0,   131,     0,
+      56,     0,     0,     0,     0,     0,    60,     0,     0,     0,
+       0,    65
 };
 
 static const yytype_int8 yycheck[] =
 {
-       3,     4,     5,     6,    14,     1,     8,     8,     7,    17,
-      12,    13,    20,    17,    15,     7,    20,     7,    21,    15,
-      22,     8,    32,     7,    34,     8,    29,    30,    31,     8,
-      33,    19,    20,    12,    13,    14,    15,    23,    24,    25,
-       7,    19,    20,    22,    19,    20,     7,    26,    27,    19,
-      20,    19,    20,    35,    36,     7,     7,     0,     8,    32,
-       9,     9,     9,     9,     9,     9,    28,     9,     9,     9,
-       9,     9,     9,     9,     9,     9,     9,     9,    32,    10,
-      -1,    -1,    10,    -1,    -1,    -1,    16,    16,    -1,    -1,
-      17,    -1,    17,    -1,    -1,    18,    -1,    -1,    -1,    -1,
-      24,    -1,    28,    -1,    -1,    -1,    28
+       3,     4,     5,     6,    14,    10,     1,     8,    32,     7,
+      17,     7,    17,    20,    15,    20,    40,    41,    21,    23,
+      24,    25,    32,    18,    34,     8,    29,    30,    31,     7,
+      33,    32,    15,     7,    37,    38,    39,    42,    17,     8,
+       7,    20,    43,    12,    13,    14,    15,     8,    19,    20,
+       7,    12,    13,    22,    19,    20,     7,    26,    27,    19,
+      20,    22,    44,    45,    46,    47,    48,    49,    50,    51,
+      52,    53,    54,    17,    19,    20,    20,    19,    20,    19,
+      20,    35,    36,     7,     7,     0,     8,     8,    16,    32,
+       9,     9,     9,     9,    28,     9,     9,     9,     9,     9,
+       9,     9,     9,     9,     9,     9,     9,     9,     9,     9,
+       9,     9,     9,     9,    -1,    10,    -1,    10,    38,    -1,
+      -1,    -1,    -1,    17,    16,    -1,    17,    -1,    17,    17,
+      -1,    -1,    -1,    -1,    -1,    21,    -1,    -1,    28,    -1,
+      27,    -1,    -1,    -1,    -1,    -1,    31,    -1,    -1,    -1,
+      -1,    35
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -697,38 +741,46 @@ static const yytype_int8 yycheck[] =
 static const yytype_int8 yystos[] =
 {
        0,     3,     4,     5,     6,    21,    29,    30,    31,    33,
-      38,    39,    48,    51,     7,    40,    41,     7,    46,    47,
-       7,    45,     7,    41,    43,    44,     7,     7,    49,    50,
-       7,     7,    52,    53,     0,     8,    12,    13,    22,    41,
-       8,    47,     8,    14,    15,    26,    27,    44,     8,     8,
-      15,    50,    32,    14,    32,    34,    53,     9,     9,     9,
+      37,    38,    39,    56,    57,    66,    69,     7,    58,    59,
+       7,    64,    65,     7,    63,     7,    59,    61,    62,     7,
+       7,    67,    68,     7,     7,    70,    71,     7,    72,    73,
+       0,     8,    12,    13,    22,    59,     8,    15,    32,    43,
+      65,     8,    14,    15,    26,    27,    62,     8,     8,    15,
+      68,    32,    14,    32,    34,    71,    32,    40,    41,    73,
        9,     9,     9,     9,     9,     9,     9,     9,     9,     9,
-       9,     9,     9,     9,    19,    20,    10,    16,    23,    24,
-      25,    42,    19,    20,    19,    20,    16,    17,    20,    28,
-      10,    19,    20,    19,    20,    17,    20,    17,    28,    17,
-      35,    36
+       9,     9,     9,     9,     9,     9,     9,     9,     9,     9,
+       9,     9,     9,    19,    20,    10,    16,    23,    24,    25,
+      60,    19,    20,    44,    45,    46,    47,    48,    49,    50,
+      51,    52,    53,    54,    17,    19,    20,    19,    20,    16,
+      17,    20,    28,    10,    19,    20,    19,    20,    17,    20,
+      17,    28,    17,    35,    36,    17,    17,    20,    10,    17,
+      20,    42
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    37,    38,    39,    39,    39,    39,    39,    39,    39,
-      39,    39,    40,    40,    41,    41,    41,    41,    41,    42,
-      42,    42,    43,    43,    44,    44,    44,    44,    44,    44,
-      45,    45,    46,    46,    47,    47,    48,    48,    49,    49,
-      50,    50,    50,    50,    51,    52,    52,    53,    53,    53,
-      53
+       0,    55,    56,    57,    57,    57,    57,    57,    57,    57,
+      57,    57,    57,    57,    57,    58,    58,    59,    59,    59,
+      59,    59,    60,    60,    60,    61,    61,    62,    62,    62,
+      62,    62,    62,    63,    63,    64,    64,    65,    65,    65,
+      65,    65,    65,    65,    65,    65,    65,    65,    65,    65,
+      65,    65,    65,    66,    66,    67,    67,    68,    68,    68,
+      68,    69,    70,    70,    71,    71,    71,    71,    72,    72,
+      73,    73,    73,    73,    73,    73,    73
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     2,     2,     2,     2,     1,     1,     1,
-       2,     2,     2,     1,     4,     4,     4,     4,     4,     1,
-       1,     1,     2,     1,     1,     4,     4,     4,     4,     4,
-       4,     4,     2,     1,     4,     4,     5,     5,     2,     1,
-       4,     4,     4,     4,     5,     2,     1,     4,     4,     4,
-       4
+       2,     2,     2,     1,     1,     2,     1,     4,     4,     4,
+       4,     4,     1,     1,     1,     2,     1,     1,     4,     4,
+       4,     4,     4,     4,     4,     2,     1,     4,     4,     4,
+       4,     4,     4,     4,     4,     4,     4,     4,     4,     4,
+       4,     4,     4,     5,     5,     2,     1,     4,     4,     4,
+       4,     5,     2,     1,     4,     4,     4,     4,     2,     1,
+       4,     4,     4,     4,     4,     4,     4
 };
 
 
@@ -1462,423 +1514,534 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* INICIO: COMANDO  */
-#line 87 "ASintactico.y"
+#line 107 "ASintactico.y"
                { raiz = (yyval.nodo); }
-#line 1468 "parser.cpp"
+#line 1520 "parser.cpp"
     break;
 
   case 3: /* COMANDO: mkdisk MKDISK  */
-#line 90 "ASintactico.y"
+#line 110 "ASintactico.y"
     {
         (yyval.nodo) = new Nodo("MKDISK", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1477 "parser.cpp"
+#line 1529 "parser.cpp"
     break;
 
   case 4: /* COMANDO: fdisk FDISK  */
-#line 94 "ASintactico.y"
+#line 114 "ASintactico.y"
                  {
         (yyval.nodo) = new Nodo("FDISK", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1486 "parser.cpp"
+#line 1538 "parser.cpp"
     break;
 
   case 5: /* COMANDO: execute SCRIPT  */
-#line 99 "ASintactico.y"
-    {
-        (yyval.nodo) = (yyvsp[0].nodo);
-    }
-#line 1494 "parser.cpp"
+#line 118 "ASintactico.y"
+                    { (yyval.nodo) = (yyvsp[0].nodo); }
+#line 1544 "parser.cpp"
     break;
 
   case 6: /* COMANDO: rep REP  */
-#line 103 "ASintactico.y"
+#line 120 "ASintactico.y"
     {
         (yyval.nodo) = new Nodo("REP", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1503 "parser.cpp"
+#line 1553 "parser.cpp"
     break;
 
   case 7: /* COMANDO: exitS  */
-#line 107 "ASintactico.y"
-          {
-        (yyval.nodo) = new Nodo("EXIT", "");
-    }
-#line 1511 "parser.cpp"
+#line 124 "ASintactico.y"
+           { (yyval.nodo) = new Nodo("EXIT", ""); }
+#line 1559 "parser.cpp"
     break;
 
   case 8: /* COMANDO: RMDISK  */
-#line 111 "ASintactico.y"
-    {
-        (yyval.nodo) = (yyvsp[0].nodo);
-    }
-#line 1519 "parser.cpp"
+#line 125 "ASintactico.y"
+            { (yyval.nodo) = (yyvsp[0].nodo); }
+#line 1565 "parser.cpp"
     break;
 
   case 9: /* COMANDO: UNMOUNT  */
-#line 115 "ASintactico.y"
-    {
-        (yyval.nodo) = (yyvsp[0].nodo);
-    }
-#line 1527 "parser.cpp"
+#line 126 "ASintactico.y"
+             { (yyval.nodo) = (yyvsp[0].nodo); }
+#line 1571 "parser.cpp"
     break;
 
   case 10: /* COMANDO: mount MOUNT  */
-#line 119 "ASintactico.y"
+#line 128 "ASintactico.y"
     {
         (yyval.nodo) = new Nodo("MOUNT", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1536 "parser.cpp"
+#line 1580 "parser.cpp"
     break;
 
   case 11: /* COMANDO: mkfs MKFS  */
-#line 124 "ASintactico.y"
+#line 133 "ASintactico.y"
     {
         (yyval.nodo) = new Nodo("MKFS", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1545 "parser.cpp"
+#line 1589 "parser.cpp"
     break;
 
-  case 12: /* MKDISK: MKDISK PARAMETRO_MK  */
-#line 130 "ASintactico.y"
+  case 12: /* COMANDO: login LOGIN  */
+#line 138 "ASintactico.y"
+    {
+        (yyval.nodo) = new Nodo("LOGIN", "");
+        (yyval.nodo)->add(*(yyvsp[0].nodo));
+    }
+#line 1598 "parser.cpp"
+    break;
+
+  case 13: /* COMANDO: logout  */
+#line 142 "ASintactico.y"
+            { (yyval.nodo) = new Nodo("LOGOUT", ""); }
+#line 1604 "parser.cpp"
+    break;
+
+  case 14: /* COMANDO: pausa  */
+#line 143 "ASintactico.y"
+           { (yyval.nodo) = new Nodo("PAUSE", ""); }
+#line 1610 "parser.cpp"
+    break;
+
+  case 15: /* MKDISK: MKDISK PARAMETRO_MK  */
+#line 146 "ASintactico.y"
                             {
         (yyval.nodo) = (yyvsp[-1].nodo);
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1554 "parser.cpp"
+#line 1619 "parser.cpp"
     break;
 
-  case 13: /* MKDISK: PARAMETRO_MK  */
-#line 134 "ASintactico.y"
+  case 16: /* MKDISK: PARAMETRO_MK  */
+#line 150 "ASintactico.y"
                    {
         (yyval.nodo) = new Nodo("PARAMETRO", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
-    }
-#line 1563 "parser.cpp"
-    break;
-
-  case 14: /* PARAMETRO_MK: mayor sizeS igual entero  */
-#line 140 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("size", (yyvsp[0].text));
-    }
-#line 1571 "parser.cpp"
-    break;
-
-  case 15: /* PARAMETRO_MK: mayor unit igual caracter  */
-#line 144 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("unit", (yyvsp[0].text));
-    }
-#line 1579 "parser.cpp"
-    break;
-
-  case 16: /* PARAMETRO_MK: mayor path igual cadena  */
-#line 148 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("path", (yyvsp[0].text));
-    }
-#line 1587 "parser.cpp"
-    break;
-
-  case 17: /* PARAMETRO_MK: mayor path igual ruta  */
-#line 152 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("path", (yyvsp[0].text));
-    }
-#line 1595 "parser.cpp"
-    break;
-
-  case 18: /* PARAMETRO_MK: mayor fit igual AJUSTE  */
-#line 156 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("fit", "");
-        (yyval.nodo)->add(*(yyvsp[0].nodo));
-    }
-#line 1604 "parser.cpp"
-    break;
-
-  case 19: /* AJUSTE: bf  */
-#line 162 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("ajuste", "bf");
-    }
-#line 1612 "parser.cpp"
-    break;
-
-  case 20: /* AJUSTE: ff  */
-#line 166 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("ajuste", "ff");
-    }
-#line 1620 "parser.cpp"
-    break;
-
-  case 21: /* AJUSTE: wf  */
-#line 170 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("ajuste", "wf");
     }
 #line 1628 "parser.cpp"
     break;
 
-  case 22: /* FDISK: FDISK PARAMETRO_FK  */
-#line 174 "ASintactico.y"
+  case 17: /* PARAMETRO_MK: mayor sizeS igual entero  */
+#line 155 "ASintactico.y"
+                                      { (yyval.nodo) = new Nodo("size", (yyvsp[0].text)); }
+#line 1634 "parser.cpp"
+    break;
+
+  case 18: /* PARAMETRO_MK: mayor unit igual caracter  */
+#line 156 "ASintactico.y"
+                               { (yyval.nodo) = new Nodo("unit", (yyvsp[0].text)); }
+#line 1640 "parser.cpp"
+    break;
+
+  case 19: /* PARAMETRO_MK: mayor path igual cadena  */
+#line 157 "ASintactico.y"
+                             { (yyval.nodo) = new Nodo("path", (yyvsp[0].text)); }
+#line 1646 "parser.cpp"
+    break;
+
+  case 20: /* PARAMETRO_MK: mayor path igual ruta  */
+#line 158 "ASintactico.y"
+                           { (yyval.nodo) = new Nodo("path", (yyvsp[0].text)); }
+#line 1652 "parser.cpp"
+    break;
+
+  case 21: /* PARAMETRO_MK: mayor fit igual AJUSTE  */
+#line 159 "ASintactico.y"
+                            {
+        (yyval.nodo) = new Nodo("fit", "");
+        (yyval.nodo)->add(*(yyvsp[0].nodo));
+    }
+#line 1661 "parser.cpp"
+    break;
+
+  case 22: /* AJUSTE: bf  */
+#line 164 "ASintactico.y"
+           { (yyval.nodo) = new Nodo("ajuste", "bf"); }
+#line 1667 "parser.cpp"
+    break;
+
+  case 23: /* AJUSTE: ff  */
+#line 165 "ASintactico.y"
+         { (yyval.nodo) = new Nodo("ajuste", "ff"); }
+#line 1673 "parser.cpp"
+    break;
+
+  case 24: /* AJUSTE: wf  */
+#line 166 "ASintactico.y"
+         { (yyval.nodo) = new Nodo("ajuste", "wf"); }
+#line 1679 "parser.cpp"
+    break;
+
+  case 25: /* FDISK: FDISK PARAMETRO_FK  */
+#line 168 "ASintactico.y"
                           {
         (yyval.nodo) = (yyvsp[-1].nodo);
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1637 "parser.cpp"
+#line 1688 "parser.cpp"
     break;
 
-  case 23: /* FDISK: PARAMETRO_FK  */
-#line 178 "ASintactico.y"
+  case 26: /* FDISK: PARAMETRO_FK  */
+#line 172 "ASintactico.y"
                    {
         (yyval.nodo) = new Nodo("PARAMETRO", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1646 "parser.cpp"
+#line 1697 "parser.cpp"
     break;
 
-  case 24: /* PARAMETRO_FK: PARAMETRO_MK  */
+  case 27: /* PARAMETRO_FK: PARAMETRO_MK  */
+#line 177 "ASintactico.y"
+                           { (yyval.nodo) = (yyvsp[0].nodo); }
+#line 1703 "parser.cpp"
+    break;
+
+  case 28: /* PARAMETRO_FK: mayor name igual identificador  */
+#line 178 "ASintactico.y"
+                                    { (yyval.nodo) = new Nodo("name", (yyvsp[0].text)); }
+#line 1709 "parser.cpp"
+    break;
+
+  case 29: /* PARAMETRO_FK: mayor name igual cadena  */
+#line 179 "ASintactico.y"
+                             { (yyval.nodo) = new Nodo("name", (yyvsp[0].text)); }
+#line 1715 "parser.cpp"
+    break;
+
+  case 30: /* PARAMETRO_FK: mayor type igual caracter  */
+#line 180 "ASintactico.y"
+                               { (yyval.nodo) = new Nodo("type", (yyvsp[0].text)); }
+#line 1721 "parser.cpp"
+    break;
+
+  case 31: /* PARAMETRO_FK: mayor del_ igual full  */
+#line 181 "ASintactico.y"
+                           { (yyval.nodo) = new Nodo("delete", "full"); }
+#line 1727 "parser.cpp"
+    break;
+
+  case 32: /* PARAMETRO_FK: mayor add igual entero  */
+#line 182 "ASintactico.y"
+                            { (yyval.nodo) = new Nodo("add", (yyvsp[0].text)); }
+#line 1733 "parser.cpp"
+    break;
+
+  case 33: /* SCRIPT: mayor path igual cadena  */
 #line 184 "ASintactico.y"
-    { 
-        (yyval.nodo) = (yyvsp[0].nodo); 
-    }
-#line 1654 "parser.cpp"
-    break;
-
-  case 25: /* PARAMETRO_FK: mayor name igual identificador  */
-#line 188 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("name", (yyvsp[0].text));
-    }
-#line 1662 "parser.cpp"
-    break;
-
-  case 26: /* PARAMETRO_FK: mayor name igual cadena  */
-#line 192 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("name", (yyvsp[0].text));
-    }
-#line 1670 "parser.cpp"
-    break;
-
-  case 27: /* PARAMETRO_FK: mayor type igual caracter  */
-#line 196 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("type", (yyvsp[0].text));
-    }
-#line 1678 "parser.cpp"
-    break;
-
-  case 28: /* PARAMETRO_FK: mayor del_ igual full  */
-#line 200 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("delete", "full");
-    }
-#line 1686 "parser.cpp"
-    break;
-
-  case 29: /* PARAMETRO_FK: mayor add igual entero  */
-#line 204 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("add", (yyvsp[0].text));
-    }
-#line 1694 "parser.cpp"
-    break;
-
-  case 30: /* SCRIPT: mayor path igual cadena  */
-#line 208 "ASintactico.y"
                                 {
         (yyval.nodo) = new Nodo("EXECUTE", "");
         Nodo *path = new Nodo("path", (yyvsp[0].text));
         (yyval.nodo)->add(*path);
     }
-#line 1704 "parser.cpp"
+#line 1743 "parser.cpp"
     break;
 
-  case 31: /* SCRIPT: mayor path igual ruta  */
-#line 213 "ASintactico.y"
+  case 34: /* SCRIPT: mayor path igual ruta  */
+#line 189 "ASintactico.y"
                             {
         (yyval.nodo) = new Nodo("EXECUTE", "");
         Nodo *path = new Nodo("path", (yyvsp[0].text));
         (yyval.nodo)->add(*path);
     }
-#line 1714 "parser.cpp"
+#line 1753 "parser.cpp"
     break;
 
-  case 32: /* REP: REP PARAMETRO_R  */
-#line 219 "ASintactico.y"
+  case 35: /* REP: REP PARAMETRO_R  */
+#line 195 "ASintactico.y"
                     {
     (yyval.nodo) = (yyvsp[-1].nodo);
     (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1723 "parser.cpp"
+#line 1762 "parser.cpp"
     break;
 
-  case 33: /* REP: PARAMETRO_R  */
-#line 223 "ASintactico.y"
+  case 36: /* REP: PARAMETRO_R  */
+#line 199 "ASintactico.y"
                   {
         (yyval.nodo) = new Nodo("PARAMETRO", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1732 "parser.cpp"
+#line 1771 "parser.cpp"
     break;
 
-  case 34: /* PARAMETRO_R: mayor path igual cadena  */
-#line 229 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("path", (yyvsp[0].text));
-    }
-#line 1740 "parser.cpp"
+  case 37: /* PARAMETRO_R: mayor path igual cadena  */
+#line 204 "ASintactico.y"
+                                     { (yyval.nodo) = new Nodo("path", (yyvsp[0].text)); }
+#line 1777 "parser.cpp"
     break;
 
-  case 35: /* PARAMETRO_R: mayor path igual ruta  */
-#line 233 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("path", (yyvsp[0].text));    
-    }
-#line 1748 "parser.cpp"
+  case 38: /* PARAMETRO_R: mayor path igual ruta  */
+#line 205 "ASintactico.y"
+                           { (yyval.nodo) = new Nodo("path", (yyvsp[0].text)); }
+#line 1783 "parser.cpp"
     break;
 
-  case 36: /* RMDISK: rmdisk mayor path igual ruta  */
-#line 238 "ASintactico.y"
+  case 39: /* PARAMETRO_R: mayor rutaRep igual cadena  */
+#line 206 "ASintactico.y"
+                                { (yyval.nodo) = new Nodo("ruta", (yyvsp[0].text)); }
+#line 1789 "parser.cpp"
+    break;
+
+  case 40: /* PARAMETRO_R: mayor rutaRep igual ruta  */
+#line 207 "ASintactico.y"
+                              { (yyval.nodo) = new Nodo("ruta", (yyvsp[0].text)); }
+#line 1795 "parser.cpp"
+    break;
+
+  case 41: /* PARAMETRO_R: mayor id igual identificador  */
+#line 208 "ASintactico.y"
+                                  { (yyval.nodo) = new Nodo("id", (yyvsp[0].text)); }
+#line 1801 "parser.cpp"
+    break;
+
+  case 42: /* PARAMETRO_R: mayor name igual mbr  */
+#line 209 "ASintactico.y"
+                          { (yyval.nodo) = new Nodo("name","mbr"); }
+#line 1807 "parser.cpp"
+    break;
+
+  case 43: /* PARAMETRO_R: mayor name igual disk  */
+#line 210 "ASintactico.y"
+                           { (yyval.nodo) = new Nodo("name","disk"); }
+#line 1813 "parser.cpp"
+    break;
+
+  case 44: /* PARAMETRO_R: mayor name igual inode  */
+#line 211 "ASintactico.y"
+                            { (yyval.nodo) = new Nodo("name", "inode"); }
+#line 1819 "parser.cpp"
+    break;
+
+  case 45: /* PARAMETRO_R: mayor name igual journaling  */
+#line 212 "ASintactico.y"
+                                 { (yyval.nodo) = new Nodo("name", "journaling"); }
+#line 1825 "parser.cpp"
+    break;
+
+  case 46: /* PARAMETRO_R: mayor name igual block  */
+#line 213 "ASintactico.y"
+                            { (yyval.nodo) = new Nodo("name", "block"); }
+#line 1831 "parser.cpp"
+    break;
+
+  case 47: /* PARAMETRO_R: mayor name igual bm_inode  */
+#line 214 "ASintactico.y"
+                               { (yyval.nodo) = new Nodo("name", "bm_inode"); }
+#line 1837 "parser.cpp"
+    break;
+
+  case 48: /* PARAMETRO_R: mayor name igual bm_block  */
+#line 215 "ASintactico.y"
+                               { (yyval.nodo) = new Nodo("name", "bm_block"); }
+#line 1843 "parser.cpp"
+    break;
+
+  case 49: /* PARAMETRO_R: mayor name igual tree  */
+#line 216 "ASintactico.y"
+                           { (yyval.nodo) = new Nodo("name", "tree"); }
+#line 1849 "parser.cpp"
+    break;
+
+  case 50: /* PARAMETRO_R: mayor name igual sb  */
+#line 217 "ASintactico.y"
+                         { (yyval.nodo) = new Nodo("name", "sb"); }
+#line 1855 "parser.cpp"
+    break;
+
+  case 51: /* PARAMETRO_R: mayor name igual fileRep  */
+#line 218 "ASintactico.y"
+                              { (yyval.nodo) = new Nodo("name", "file"); }
+#line 1861 "parser.cpp"
+    break;
+
+  case 52: /* PARAMETRO_R: mayor name igual ls  */
+#line 219 "ASintactico.y"
+                         { (yyval.nodo) = new Nodo("name", "ls"); }
+#line 1867 "parser.cpp"
+    break;
+
+  case 53: /* RMDISK: rmdisk mayor path igual ruta  */
+#line 222 "ASintactico.y"
     {
         (yyval.nodo) = new Nodo("RMDISK", "");
         Nodo *ruta = new Nodo("path", (yyvsp[0].text));
         (yyval.nodo)->add(*ruta);
     }
-#line 1758 "parser.cpp"
+#line 1877 "parser.cpp"
     break;
 
-  case 37: /* RMDISK: rmdisk mayor path igual cadena  */
-#line 244 "ASintactico.y"
+  case 54: /* RMDISK: rmdisk mayor path igual cadena  */
+#line 228 "ASintactico.y"
     {
         (yyval.nodo) = new Nodo("RMDISK", "");
         Nodo *ruta = new Nodo("path", (yyvsp[0].text));
         (yyval.nodo)->add(*ruta);
     }
-#line 1768 "parser.cpp"
+#line 1887 "parser.cpp"
     break;
 
-  case 38: /* MOUNT: MOUNT PARAMETRO_M  */
-#line 251 "ASintactico.y"
+  case 55: /* MOUNT: MOUNT PARAMETRO_M  */
+#line 235 "ASintactico.y"
     {
         (yyval.nodo) = (yyvsp[-1].nodo);
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1777 "parser.cpp"
+#line 1896 "parser.cpp"
     break;
 
-  case 39: /* MOUNT: PARAMETRO_M  */
-#line 255 "ASintactico.y"
+  case 56: /* MOUNT: PARAMETRO_M  */
+#line 239 "ASintactico.y"
                   {
         (yyval.nodo) = new Nodo("PARAMETRO", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1786 "parser.cpp"
+#line 1905 "parser.cpp"
     break;
 
-  case 40: /* PARAMETRO_M: mayor path igual cadena  */
-#line 261 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("path", (yyvsp[0].text));
-    }
-#line 1794 "parser.cpp"
+  case 57: /* PARAMETRO_M: mayor path igual cadena  */
+#line 244 "ASintactico.y"
+                                    { (yyval.nodo) = new Nodo("path", (yyvsp[0].text)); }
+#line 1911 "parser.cpp"
     break;
 
-  case 41: /* PARAMETRO_M: mayor path igual ruta  */
-#line 265 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("path", (yyvsp[0].text));
-    }
-#line 1802 "parser.cpp"
+  case 58: /* PARAMETRO_M: mayor path igual ruta  */
+#line 245 "ASintactico.y"
+                           { (yyval.nodo) = new Nodo("path", (yyvsp[0].text)); }
+#line 1917 "parser.cpp"
     break;
 
-  case 42: /* PARAMETRO_M: mayor name igual identificador  */
-#line 269 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("name", (yyvsp[0].text));
-    }
-#line 1810 "parser.cpp"
+  case 59: /* PARAMETRO_M: mayor name igual identificador  */
+#line 246 "ASintactico.y"
+                                    { (yyval.nodo) = new Nodo("name", (yyvsp[0].text)); }
+#line 1923 "parser.cpp"
     break;
 
-  case 43: /* PARAMETRO_M: mayor name igual cadena  */
-#line 273 "ASintactico.y"
-    {
-        (yyval.nodo) = new Nodo("name", (yyvsp[0].text));
-    }
-#line 1818 "parser.cpp"
+  case 60: /* PARAMETRO_M: mayor name igual cadena  */
+#line 247 "ASintactico.y"
+                             { (yyval.nodo) = new Nodo("name", (yyvsp[0].text)); }
+#line 1929 "parser.cpp"
     break;
 
-  case 44: /* UNMOUNT: unmount mayor id igual identificador  */
-#line 278 "ASintactico.y"
+  case 61: /* UNMOUNT: unmount mayor id igual identificador  */
+#line 250 "ASintactico.y"
     {
         (yyval.nodo) = new Nodo("UNMOUNT", "");
         Nodo *n = new Nodo("id", (yyvsp[0].text));
         (yyval.nodo)->add(*n);
     }
-#line 1828 "parser.cpp"
+#line 1939 "parser.cpp"
     break;
 
-  case 45: /* MKFS: MKFS PARAM_MKFS  */
-#line 284 "ASintactico.y"
+  case 62: /* MKFS: MKFS PARAM_MKFS  */
+#line 256 "ASintactico.y"
                       {
         (yyval.nodo) = (yyvsp[-1].nodo);
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1837 "parser.cpp"
+#line 1948 "parser.cpp"
     break;
 
-  case 46: /* MKFS: PARAM_MKFS  */
-#line 288 "ASintactico.y"
+  case 63: /* MKFS: PARAM_MKFS  */
+#line 260 "ASintactico.y"
                  {
         (yyval.nodo) = new Nodo("PARAMETRO", "");
         (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1846 "parser.cpp"
+#line 1957 "parser.cpp"
     break;
 
-  case 47: /* PARAM_MKFS: mayor id igual identificador  */
-#line 294 "ASintactico.y"
-    { 
-        (yyval.nodo) = new Nodo("id", (yyvsp[0].text)); 
+  case 64: /* PARAM_MKFS: mayor id igual identificador  */
+#line 265 "ASintactico.y"
+                                        { (yyval.nodo) = new Nodo("id", (yyvsp[0].text)); }
+#line 1963 "parser.cpp"
+    break;
+
+  case 65: /* PARAM_MKFS: mayor type igual full  */
+#line 266 "ASintactico.y"
+                           { (yyval.nodo) = new Nodo("type", "full"); }
+#line 1969 "parser.cpp"
+    break;
+
+  case 66: /* PARAM_MKFS: mayor fs igual fs2  */
+#line 267 "ASintactico.y"
+                        { (yyval.nodo) = new Nodo("fs", "2fs"); }
+#line 1975 "parser.cpp"
+    break;
+
+  case 67: /* PARAM_MKFS: mayor fs igual fs3  */
+#line 268 "ASintactico.y"
+                        { (yyval.nodo) = new Nodo("fs", "3fs"); }
+#line 1981 "parser.cpp"
+    break;
+
+  case 68: /* LOGIN: LOGIN PARAM_LOGIN  */
+#line 271 "ASintactico.y"
+    {
+        (yyval.nodo) = (yyvsp[-1].nodo);
+        (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1854 "parser.cpp"
+#line 1990 "parser.cpp"
     break;
 
-  case 48: /* PARAM_MKFS: mayor type igual full  */
-#line 298 "ASintactico.y"
-    { 
-        (yyval.nodo) = new Nodo("type", "full"); 
+  case 69: /* LOGIN: PARAM_LOGIN  */
+#line 276 "ASintactico.y"
+    {
+        (yyval.nodo) = new Nodo("PARAMETRO", "");
+        (yyval.nodo)->add(*(yyvsp[0].nodo));
     }
-#line 1862 "parser.cpp"
+#line 1999 "parser.cpp"
     break;
 
-  case 49: /* PARAM_MKFS: mayor fs igual fs2  */
-#line 302 "ASintactico.y"
-    { 
-        (yyval.nodo) = new Nodo("fs", "2fs"); 
-    }
-#line 1870 "parser.cpp"
+  case 70: /* PARAM_LOGIN: mayor usuario igual identificador  */
+#line 281 "ASintactico.y"
+                                              { (yyval.nodo) = new Nodo("usuario", (yyvsp[0].text)); }
+#line 2005 "parser.cpp"
     break;
 
-  case 50: /* PARAM_MKFS: mayor fs igual fs3  */
-#line 306 "ASintactico.y"
-    { 
-        (yyval.nodo) = new Nodo("fs", "3fs"); 
-    }
-#line 1878 "parser.cpp"
+  case 71: /* PARAM_LOGIN: mayor usuario igual cadena  */
+#line 282 "ASintactico.y"
+                                { (yyval.nodo) = new Nodo("password", (yyvsp[0].text)); }
+#line 2011 "parser.cpp"
+    break;
+
+  case 72: /* PARAM_LOGIN: mayor password igual entero  */
+#line 283 "ASintactico.y"
+                                 { (yyval.nodo) = new Nodo("password", (yyvsp[0].text)); }
+#line 2017 "parser.cpp"
+    break;
+
+  case 73: /* PARAM_LOGIN: mayor password igual identificador  */
+#line 284 "ASintactico.y"
+                                         { (yyval.nodo) = new Nodo("password", (yyvsp[0].text)); }
+#line 2023 "parser.cpp"
+    break;
+
+  case 74: /* PARAM_LOGIN: mayor password igual pwd  */
+#line 285 "ASintactico.y"
+                               { (yyval.nodo) = new Nodo("password", (yyvsp[0].text)); }
+#line 2029 "parser.cpp"
+    break;
+
+  case 75: /* PARAM_LOGIN: mayor password igual cadena  */
+#line 286 "ASintactico.y"
+                                  { (yyval.nodo) = new Nodo("password", (yyvsp[0].text)); }
+#line 2035 "parser.cpp"
+    break;
+
+  case 76: /* PARAM_LOGIN: mayor id igual identificador  */
+#line 287 "ASintactico.y"
+                                   { (yyval.nodo) = new Nodo("id", (yyvsp[0].text)); }
+#line 2041 "parser.cpp"
     break;
 
 
-#line 1882 "parser.cpp"
+#line 2045 "parser.cpp"
 
       default: break;
     }

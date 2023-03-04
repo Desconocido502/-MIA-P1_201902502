@@ -25,6 +25,7 @@ Caracter ({Letra}|{Entero})
 ruta "."?({diagonal}{id})*({diagonal}{id}{extension})
 Cadena "\""[^"\""]*"\""
 Espacios (" "|"\r"|"\t"|"n")
+pwd ({Letra}|{Entero}|[!$@+*])+
 
 %x ComentarioSimple
 
@@ -58,12 +59,30 @@ Espacios (" "|"\r"|"\t"|"n")
 "2fs"                       {  return fs2; }
 "3fs"                       {  return fs3; }
 "mkfs"                      {  return mkfs; }
+"login"                     {  return login; }
+"logout"                    {  return logout; }
+"pause"                     {  return pausa; }
+"user"                      {  return usuario; }
+"pass"                      {  return password; }
+"ruta"                      {  return rutaRep;  }
+"mbr"                       {  return mbr; }
+"disk"                      {  return disk; }
+"inode"                     {  return inode; }
+"journaling"                {  return journaling; }
+"block"                     {  return block; }
+"bm_inode"                  {  return bm_inode; }
+"bm_block"                  {  return bm_block; }
+"tree"                      {  return tree; }
+"sb"                        {  return sb; }
+"file"                      {  return fileRep; }
+"ls"                        {  return ls; }
 {Entero}                    {  strcpy(yylval.text, yytext); return entero;}
 {Caracter}                  {  strcpy(yylval.text, yytext); return caracter;}
 {Cadena}                    {  strcpy(yylval.text, yytext); return cadena;}
 {extension}                 {  strcpy(yylval.text, yytext); return extension;}
 {id}                        {  strcpy(yylval.text, yytext); return identificador;}
 {ruta}                      {  strcpy(yylval.text, yytext); return ruta;}
+{pwd}                       {  strcpy(yylval.text, yytext); return pwd;}
 {Espacios}                  {  /*NO se realiza nada*/}
 .                           {  cout << "Error lexico, no se esperaba token: " << yytext << endl;}
 <ComentarioSimple>.         {  /*NO se realiza nada*/}

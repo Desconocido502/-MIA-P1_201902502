@@ -4,6 +4,7 @@ mkdisk >size=5 >unit=M >path="/home/mis discos/Disco3.dsk"
 mkdisk >size=10 >path="/home/mis discos/Disco4.dsk"
 
 #Hola
+pause
 
 fdisk >size=300 >path=/home/user/Disco1.dsk >name=Particion1
 fdisk >type=E >path=/home/user/Disco2.dsk >unit=K >name=Particion2 >size=300
@@ -13,3 +14,18 @@ fdisk >delete=full >name="Particion1" >path=/home/user/Disco1.dsk
 fdisk >name=Particion1 >delete=full >path=/home/user/Disco1.dsk
 fdisk >add=-500 >size=10 >unit=K >path="/home/mis discos/Disco4.dsk" >name="Particion4"
 fdisk >add=1 >unit=M >path="/home/mis discos/Disco4.dsk" >name="Particion4"
+
+mount >path=/home/user/Disco1.dsk >name=Particion1
+mount >path=/home/user/Disco2.dsk >name=Particion1
+#id=021Disco3
+mount >name=Particion2 >path="/home/mis discos/Disco3.dsk"
+#id=022Disco1
+mount >path=/home/user/Disco1.dsk >name=Particion2 
+#id=022Disco2
+mount >path=/home/user/Disco2.dsk >name=Particion2 
+#id=022Disco4
+mount >name=Particion4 >path="/home/mis discos/Disco4.dsk" 
+
+unmount >id=022Disco2
+
+mkfs >type=full >id=021Disco1
