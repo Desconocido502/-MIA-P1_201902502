@@ -85,6 +85,8 @@ directorio ({diagonal}{id})+
 "r"                         {  return r; }
 "ugo"                       {  return ugo; }
 "chmod"                     {  return Rchmod; }
+"cont"                      {  return cont;}
+"mkfile"                    {  return mkfile; }
 {Entero}                    {  strcpy(yylval.text, yytext); return entero;}
 {Caracter}                  {  strcpy(yylval.text, yytext); return caracter;}
 {Cadena}                    {  strcpy(yylval.text, yytext); return cadena;}

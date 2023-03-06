@@ -90,6 +90,8 @@
 %token <text> ugo
 %token <text> Rchmod
 %token <text> directorioA
+%token <text> mkfile
+%token <text> cont
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -116,6 +118,8 @@
 %type <nodo> RMUSR
 %type <nodo> CHMOD
 %type <nodo> PARAM_CHMOD
+%type <nodo> MKFILE
+%type <nodo> PARAM_MKFILE
 
 %start INICIO
 %%
@@ -167,6 +171,10 @@ COMANDO:mkdisk MKDISK
     |Rchmod CHMOD
     {
         $$ = new Nodo("CHMOD", "");
+        $$->add(*$2);
+    }| mkfile MKFILE 
+    {
+        $$ = new Nodo("MKFILE","");
         $$->add(*$2);
     };
     
@@ -385,4 +393,22 @@ CHMOD: CHMOD PARAM_CHMOD
 PARAM_CHMOD:mayor path igual cadena { $$ = new Nodo("path",$4); }
             |mayor path igual directorioA { $$ = new Nodo("path",$4); }
             |mayor ugo igual entero { $$ = new Nodo("ugo",$4); }
+            |mayor r { $$ = new Nodo("r",""); };
+
+MKFILE: MKFILE PARAM_MKFILE 
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    | PARAM_MKFILE{
+        $$ = new Nodo("PARAMETRO","");
+        $$->add(*$1);
+    };
+
+
+PARAM_MKFILE:mayor path igual ruta { $$ = new Nodo("path",$4); }
+            |mayor path igual cadena { $$ = new Nodo("path",$4); }
+            |mayor sizeS igual entero { $$ = new Nodo("size",$4); }
+            |mayor cont igual ruta { $$ = new Nodo("cont",$4); }
+            |mayor cont igual cadena { $$ = new Nodo("cont",$4); }
             |mayor r { $$ = new Nodo("r",""); };

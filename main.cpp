@@ -134,6 +134,9 @@ void reconocerComando(Nodo *root)
     }else if(raiz->tipo == "CHMOD"){ //!PENDIENTE
         Nodo n = raiz->hijos.front();
         CHMOD(&n);
+    }else if(raiz->tipo == "MKFILE"){
+        Nodo n = raiz->hijos.front();
+        MKFILE(&n);
     }else
     {
         cout << "Comando no reconocido" << endl;
