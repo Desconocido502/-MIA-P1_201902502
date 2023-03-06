@@ -86,6 +86,10 @@
 %token <text> grp
 %token <text> mkusr
 %token <text> rmusr
+%token <text> r
+%token <text> ugo
+%token <text> Rchmod
+%token <text> directorioA
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -110,7 +114,8 @@
 %type <nodo> MKUSR
 %type <nodo> PARAM_MKUSR
 %type <nodo> RMUSR
-
+%type <nodo> CHMOD
+%type <nodo> PARAM_CHMOD
 
 %start INICIO
 %%
@@ -158,7 +163,12 @@ COMANDO:mkdisk MKDISK
         $$ = new Nodo("MKUSR", "");
         $$->add(*$2);
     }
-    | RMUSR { $$ = $1; };
+    |RMUSR { $$ = $1; }
+    |Rchmod CHMOD
+    {
+        $$ = new Nodo("CHMOD", "");
+        $$->add(*$2);
+    };
     
 
 MKDISK: MKDISK PARAMETRO_MK {
@@ -360,3 +370,19 @@ RMUSR:rmusr mayor usuario igual identificador
         Nodo *n = new Nodo("user",$5);
         $$->add(*n);
     };
+
+CHMOD: CHMOD PARAM_CHMOD 
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    | PARAM_CHMOD 
+    {
+       $$ = new Nodo("PARAMETRO","");
+        $$->add(*$1);
+    };
+
+PARAM_CHMOD:mayor path igual cadena { $$ = new Nodo("path",$4); }
+            |mayor path igual directorioA { $$ = new Nodo("path",$4); }
+            |mayor ugo igual entero { $$ = new Nodo("ugo",$4); }
+            |mayor r { $$ = new Nodo("r",""); };

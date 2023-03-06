@@ -18,6 +18,8 @@
 #include "login.cpp"
 #include "mkgrp_rmgrp.cpp"
 #include "mkusr_rmusr.cpp"
+#include "chmod.cpp"
+#include "mkfile.cpp"
 
 ListaMount *listaMount = new ListaMount();
 bool loggedin = false;
@@ -129,6 +131,9 @@ void reconocerComando(Nodo *root)
         MKUSR(&n);
     }else if(raiz->tipo == "RMUSR"){
         RMUSR(raiz);
+    }else if(raiz->tipo == "CHMOD"){ //!PENDIENTE
+        Nodo n = raiz->hijos.front();
+        CHMOD(&n);
     }else
     {
         cout << "Comando no reconocido" << endl;

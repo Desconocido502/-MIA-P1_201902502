@@ -110,7 +110,11 @@ extern int yydebug;
     rmgrp = 311,                   /* rmgrp  */
     grp = 312,                     /* grp  */
     mkusr = 313,                   /* mkusr  */
-    rmusr = 314                    /* rmusr  */
+    rmusr = 314,                   /* rmusr  */
+    r = 315,                       /* r  */
+    ugo = 316,                     /* ugo  */
+    Rchmod = 317,                  /* Rchmod  */
+    directorioA = 318              /* directorioA  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -124,7 +128,7 @@ union YYSTYPE
     char text[400];
     class Nodo *nodo;
 
-#line 128 "parser.h"
+#line 132 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

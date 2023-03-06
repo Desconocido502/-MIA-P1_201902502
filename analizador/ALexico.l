@@ -26,6 +26,7 @@ ruta "."?({diagonal}{id})*({diagonal}{id}{extension})
 Cadena "\""[^"\""]*"\""
 Espacios (" "|"\r"|"\t"|"n")
 pwd ({Letra}|{Entero}|[!$@+*])+
+directorio ({diagonal}{id})+
 
 %x ComentarioSimple
 
@@ -81,6 +82,9 @@ pwd ({Letra}|{Entero}|[!$@+*])+
 "grp"                       {  return grp; }
 "mkusr"                     {  return mkusr; }
 "rmusr"                     {  return rmusr; }
+"r"                         {  return r; }
+"ugo"                       {  return ugo; }
+"chmod"                     {  return Rchmod; }
 {Entero}                    {  strcpy(yylval.text, yytext); return entero;}
 {Caracter}                  {  strcpy(yylval.text, yytext); return caracter;}
 {Cadena}                    {  strcpy(yylval.text, yytext); return cadena;}
@@ -88,6 +92,7 @@ pwd ({Letra}|{Entero}|[!$@+*])+
 {id}                        {  strcpy(yylval.text, yytext); return identificador;}
 {ruta}                      {  strcpy(yylval.text, yytext); return ruta;}
 {pwd}                       {  strcpy(yylval.text, yytext); return pwd;}
+{directorio}                {  strcpy(yylval.text, yytext); return directorioA;}
 {Espacios}                  {  /*NO se realiza nada*/}
 .                           {  cout << "Error lexico, no se esperaba token: " << yytext << endl;}
 <ComentarioSimple>.         {  /*NO se realiza nada*/}

@@ -32,3 +32,7 @@ unmount >id=022Disco2
 mkfs >type=full >id=021Disco1
 
 #login >user=root >pass=123 >id=061Disco1
+
+login >user=root >pass=123 >id=021Disco1
+mkgrp >name=usuarios
+mkusr >user=user1 >pass=usuario >grp=usuarios
