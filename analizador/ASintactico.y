@@ -81,6 +81,11 @@
 %token <text> fileRep
 %token <text> ls
 %token <text> mbr
+%token <text> mkgrp
+%token <text> rmgrp
+%token <text> grp
+%token <text> mkusr
+%token <text> rmusr
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -100,6 +105,12 @@
 %type <nodo> PARAM_MKFS
 %type <nodo> LOGIN
 %type <nodo> PARAM_LOGIN
+%type <nodo> MKGRP
+%type <nodo> RMGRP
+%type <nodo> MKUSR
+%type <nodo> PARAM_MKUSR
+%type <nodo> RMUSR
+
 
 %start INICIO
 %%
@@ -140,7 +151,14 @@ COMANDO:mkdisk MKDISK
         $$->add(*$2);
     }
     |logout { $$ = new Nodo("LOGOUT", ""); }
-    |pausa { $$ = new Nodo("PAUSE", ""); };
+    |pausa { $$ = new Nodo("PAUSE", ""); }
+    |MKGRP { $$=$1; }
+    |RMGRP { $$=$1; }
+    |mkusr MKUSR {
+        $$ = new Nodo("MKUSR", "");
+        $$->add(*$2);
+    }
+    | RMUSR { $$ = $1; };
     
 
 MKDISK: MKDISK PARAMETRO_MK {
@@ -279,9 +297,66 @@ LOGIN: LOGIN PARAM_LOGIN
     };
 
 PARAM_LOGIN:mayor usuario igual identificador { $$ = new Nodo("usuario", $4); }
-    |mayor usuario igual cadena { $$ = new Nodo("password", $4); }
+    |mayor usuario igual cadena { $$ = new Nodo("usuario", $4); }
     |mayor password igual entero { $$ = new Nodo("password", $4); }
     | mayor password igual identificador { $$ = new Nodo("password", $4); }
     | mayor password igual pwd { $$ = new Nodo("password", $4); }
     | mayor password igual cadena { $$ = new Nodo("password", $4); }
     | mayor id igual identificador { $$ = new Nodo("id", $4); };
+
+MKGRP: mkgrp mayor name igual identificador {
+                                        $$ = new Nodo("MKGRP","");
+                                        Nodo *n = new Nodo("name",$5);
+                                        $$->add(*n);
+                                      }
+       | mkgrp mayor name igual cadena {
+                                    $$ = new Nodo("MKGRP","");
+                                    Nodo *n = new Nodo("name",$5);
+                                    $$->add(*n);
+                                 };
+
+RMGRP:rmgrp mayor name igual identificador 
+    {
+        $$ = new Nodo("RMGRP","");
+        Nodo *n = new Nodo("name", $5);
+        $$->add(*n);
+    }
+    |rmgrp mayor name igual cadena 
+    {
+        $$ = new Nodo("RMGRP", "");
+        Nodo *n = new Nodo("name",$5);
+        $$->add(*n);
+    };
+
+MKUSR: MKUSR PARAM_MKUSR 
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    |PARAM_MKUSR 
+    {
+        $$ = new Nodo("PARAMETRO", "");
+        $$->add(*$1);
+    };
+
+PARAM_MKUSR:mayor usuario igual identificador { $$ = new Nodo("usuario", $4); }
+            |mayor usuario igual cadena { $$ = new Nodo("usuario", $4); }
+            |mayor password igual entero { $$ = new Nodo("password", $4); }
+            |mayor password igual identificador { $$ = new Nodo("password", $4); }
+            |mayor password igual pwd { $$ = new Nodo("password", $4); }
+            |mayor password igual cadena { $$ = new Nodo("password", $4); }
+            |mayor grp igual identificador { $$ = new Nodo("group", $4); }
+            |mayor grp igual cadena { $$ = new Nodo("group",$4); };
+
+RMUSR:rmusr mayor usuario igual identificador 
+    {
+        $$ = new Nodo("RMUSR","");
+        Nodo *n = new Nodo("user",$5);
+        $$->add(*n);
+    }
+    |rmusr mayor usuario igual cadena 
+    {
+        $$ = new Nodo("RMUSR", "");
+        Nodo *n = new Nodo("user",$5);
+        $$->add(*n);
+    };

@@ -105,7 +105,12 @@ extern int yydebug;
     sb = 306,                      /* sb  */
     fileRep = 307,                 /* fileRep  */
     ls = 308,                      /* ls  */
-    mbr = 309                      /* mbr  */
+    mbr = 309,                     /* mbr  */
+    mkgrp = 310,                   /* mkgrp  */
+    rmgrp = 311,                   /* rmgrp  */
+    grp = 312,                     /* grp  */
+    mkusr = 313,                   /* mkusr  */
+    rmusr = 314                    /* rmusr  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -119,7 +124,7 @@ union YYSTYPE
     char text[400];
     class Nodo *nodo;
 
-#line 123 "parser.h"
+#line 128 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

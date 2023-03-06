@@ -34,7 +34,7 @@ void LOGIN(Nodo *raiz){
             id = it->valor;
         } 
     }
-
+    //cout << "user: " << user << endl;
     
     if(user != ""){
         if(password != ""){

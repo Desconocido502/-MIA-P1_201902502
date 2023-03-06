@@ -76,6 +76,11 @@ pwd ({Letra}|{Entero}|[!$@+*])+
 "sb"                        {  return sb; }
 "file"                      {  return fileRep; }
 "ls"                        {  return ls; }
+"mkgrp"                     {  return mkgrp; }
+"rmgrp"                     {  return rmgrp; }
+"grp"                       {  return grp; }
+"mkusr"                     {  return mkusr; }
+"rmusr"                     {  return rmusr; }
 {Entero}                    {  strcpy(yylval.text, yytext); return entero;}
 {Caracter}                  {  strcpy(yylval.text, yytext); return caracter;}
 {Cadena}                    {  strcpy(yylval.text, yytext); return cadena;}

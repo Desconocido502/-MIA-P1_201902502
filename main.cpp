@@ -16,6 +16,8 @@
 #include "rep-exec.cpp"
 #include "mkfs.cpp"
 #include "login.cpp"
+#include "mkgrp_rmgrp.cpp"
+#include "mkusr_rmusr.cpp"
 
 ListaMount *listaMount = new ListaMount();
 bool loggedin = false;
@@ -35,7 +37,7 @@ int main()
     string str;
     while (true)
     {
-        cout << "[MIA]@HT2:~$ ";
+        cout << "[MIA]@P1:~$ ";
         fgets(comando, sizeof(comando), stdin);
         str = comando;
         if (str.compare("Exit") == 0)
@@ -118,8 +120,16 @@ void reconocerComando(Nodo *root)
     {
         cout << "Presione Enter para continuar..." << endl;
         cin.get();
-    }
-    else
+    }else if(raiz->tipo == "MKGRP"){
+        MKGRP(raiz);
+    }else if(raiz->tipo == "RMGRP"){
+        RMGRP(raiz);
+    }else if(raiz->tipo == "MKUSR"){
+        Nodo n = raiz->hijos.front();
+        MKUSR(&n);
+    }else if(raiz->tipo == "RMUSR"){
+        RMUSR(raiz);
+    }else
     {
         cout << "Comando no reconocido" << endl;
     }
