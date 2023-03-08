@@ -14,34 +14,36 @@ extern ListaMount *listaMount;
 extern bool loggedin;
 extern Sesion sesionActual;
 
-void RENAME(Nodo *raiz){
+void COPY(Nodo *raiz){
     string path = "";
-    string name = "";
+    string destino = "";
 
     list<Nodo>::iterator it;
     for (it = raiz->hijos.begin(); it != raiz->hijos.end(); ++it)
     {
-
         if (it->tipo == "path")
         {
             path = it->valor;
             path = regex_replace(path, regex("\""), "");
             path = regex_replace(path, regex("/home/"), "/home/li/Escritorio/");
         }
-        else if (it->tipo == "name")
+        else if (it->tipo == "destino")
         {
-            name = it->valor;
-            name = regex_replace(name, regex("\""), "");
+            destino = it->valor;
+            destino = regex_replace(destino, regex("\""), "");
+            destino = regex_replace(destino, regex("/home/"), "/home/li/Escritorio/");
         }
-    }
+    }  
 
     if(path != ""){
-        if(name != ""){
+        if(destino != ""){
             if(loggedin){
-                cout << "estamos en sesion " << endl;
-            }
+                cout << "estamos en sesion" << endl;
+                
+            }else
+                cout << "ERROR: Para poder ejecutar este comando necesita iniciar sesion" << endl;
         }else
-            cout << "ERROR parametro -name no definido" << endl;
+            cout << "\033[31mERROR: Parametro -destino no definido\033[0m\n" << endl;
     }else
-        cout << "ERROR parametro -path no definido" << endl;
+        cout << "\033[31mERROR: Parametro -path no definido\033[0m\n" << endl;
 }

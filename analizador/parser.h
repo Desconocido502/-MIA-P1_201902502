@@ -120,7 +120,12 @@ extern int yydebug;
     cat = 321,                     /* cat  */
     removeR = 322,                 /* removeR  */
     edit = 323,                    /* edit  */
-    renameR = 324                  /* renameR  */
+    renameR = 324,                 /* renameR  */
+    Rmkdir = 325,                  /* Rmkdir  */
+    destino = 326,                 /* destino  */
+    copyR = 327,                   /* copyR  */
+    moveR = 328,                   /* moveR  */
+    recovery = 329                 /* recovery  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -134,7 +139,7 @@ union YYSTYPE
     char text[400];
     class Nodo *nodo;
 
-#line 138 "parser.h"
+#line 143 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

@@ -90,7 +90,7 @@ void MKFILE(Nodo *raiz){
                 else if(result == 3)
                     cout << "ERROR el archivo contenido no existe" << endl;
                 else if(result == 4)
-                    cout << "ERROR no existe la ruta y no se tiene el parametro -p" << endl;
+                    cout << "ERROR no existe la ruta y no se tiene el parametro -r" << endl;
             }else
                 cout << "ERROR necesita iniciar sesion para poder ejecutar este comando" << endl;
         }else

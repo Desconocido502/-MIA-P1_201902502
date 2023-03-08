@@ -257,3 +257,219 @@ void graficarSuperBloque(string direccion, string destino, string extension, int
     system(comando.c_str());
     cout << "*Reporte SuperBloque generado con exito*" << endl;
 }
+
+//Metodo para generar el reporte de inodos de una particion
+void graficarInodos(string direccion, string destino, string extension, int bm_inode_start, int inode_start, int bm_block_start ){
+    FILE *fp = fopen(direccion.c_str(), "r");
+
+    InodoTable inodo;
+    int aux = bm_inode_start;
+    int i = 0;
+    char buffer;
+
+    FILE *graph = fopen("grafica.dot","w");
+    fprintf(graph,"digraph G{\n\n");
+
+    while(aux < bm_block_start){
+        fseek(fp,bm_inode_start + i,SEEK_SET);
+        buffer = static_cast<char>(fgetc(fp));
+        aux++;
+        if(buffer == '1'){
+            fseek(fp,inode_start + static_cast<int>(sizeof(InodoTable))*i,SEEK_SET);
+            fread(&inodo,sizeof(InodoTable),1,fp);
+            fprintf(graph, "    nodo_%d [ shape=none fontname=\"Century Gothic\" label=<\n",i);
+            fprintf(graph, "   <table border=\'0\' cellborder=\'1\' cellspacing=\'0\' bgcolor=\"royalblue\">");
+            fprintf(graph, "    <tr> <td colspan=\'2\'> <b>Inodo %d</b> </td></tr>\n",i);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_uid </td> <td bgcolor=\"white\"> %d </td>  </tr>\n",inodo.i_uid);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_gid </td> <td bgcolor=\"white\"> %d </td>  </tr>\n",inodo.i_gid);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_size </td> <td bgcolor=\"white\"> %d </td> </tr>\n",inodo.i_size);
+            struct tm *tm;
+            char fecha[100];
+            tm=localtime(&inodo.i_atime);
+            strftime(fecha,100,"%d/%m/%y %H:%S",tm);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_atime </td> <td bgcolor=\"white\"> %s </td>  </tr>\n",fecha);
+            tm=localtime(&inodo.i_ctime);
+            strftime(fecha,100,"%d/%m/%y %H:%S",tm);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_ctime </td> <td bgcolor=\"white\"> %s </td>  </tr>\n",fecha);
+            tm=localtime(&inodo.i_mtime);
+            strftime(fecha,100,"%d/%m/%y %H:%S",tm);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_mtime </td> <td bgcolor=\"white\"> %s </td></tr>\n",fecha);
+            for(int b = 0; b < 15; b++)
+                fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_block_%d </td> <td bgcolor=\"white\"> %d </td> </tr>\n",b,inodo.i_block[b]);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_type </td> <td bgcolor=\"white\"> %c </td> </tr>\n",inodo.i_type);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_perm </td> <td bgcolor=\"white\"> %d </td> </tr>\n",inodo.i_perm);
+            fprintf(graph, "   </table>>]\n");
+        }
+        i++;
+    }
+    fprintf(graph,"\n}");
+    fclose(graph);
+
+    fclose(fp);
+
+    string comando = "dot -T"+extension+" grafica.dot -o "+destino;
+    system(comando.c_str());
+    cout << "Reporte de inodos generado con exito " << endl;
+}
+
+//Metodo para generar el reporte del arbol de inodos con bloques de un sistema de archivos
+void graficarTree(string direccion,string destino, string extension, int start_super){
+    FILE *fp = fopen(direccion.c_str(),"r");
+
+    SuperBloque super;
+    InodoTable inodo;
+    BloqueCarpeta carpeta;
+    BloqueArchivo archivo;
+    BloqueApuntadores apuntador;
+
+    fseek(fp,start_super,SEEK_SET);
+    fread(&super,sizeof(SuperBloque),1,fp);
+
+    int aux = super.s_bm_inode_start;
+    int i = 0;
+
+    char buffer;
+
+    FILE *graph = fopen("grafica.dot", "w");
+    fprintf(graph, "digraph G{\n\n");
+    fprintf(graph, "    rankdir=\"LR\" \n");
+
+    //Creamos los inodos
+    while(aux < super.s_bm_block_start){
+        fseek(fp,super.s_bm_inode_start + i,SEEK_SET);
+        buffer = static_cast<char>(fgetc(fp));
+        aux++;
+        int port = 0;
+        if(buffer == '1'){
+            fseek(fp,super.s_inode_start + static_cast<int>(sizeof(InodoTable))*i,SEEK_SET);
+            fread(&inodo,sizeof(InodoTable),1,fp);
+            fprintf(graph, "    inodo_%d [ shape=plaintext fontname=\"Century Gothic\" label=<\n",i);
+            fprintf(graph, "   <table bgcolor=\"royalblue\" border=\'0\' >");
+            fprintf(graph, "    <tr> <td colspan=\'2\'><b>Inode %d</b></td></tr>\n",i);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_uid </td> <td bgcolor=\"white\"> %d </td>  </tr>\n",inodo.i_uid);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_gid </td> <td bgcolor=\"white\"> %d </td>  </tr>\n",inodo.i_gid);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_size </td><td bgcolor=\"white\"> %d </td> </tr>\n",inodo.i_size);
+            struct tm *tm;
+            char fecha[100];
+            tm=localtime(&inodo.i_atime);
+            strftime(fecha,100,"%d/%m/%y %H:%S",tm);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_atime </td> <td bgcolor=\"white\"> %s </td> </tr>\n",fecha);
+            tm=localtime(&inodo.i_ctime);
+            strftime(fecha,100,"%d/%m/%y %H:%S",tm);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_ctime </td> <td bgcolor=\"white\"> %s </td> </tr>\n",fecha);
+            tm=localtime(&inodo.i_mtime);
+            strftime(fecha,100,"%d/%m/%y %H:%S",tm);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_mtime </td> <td bgcolor=\"white\"> %s </td> </tr>\n",fecha);
+            for(int b = 0; b < 15; b++){
+                fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_block_%d </td> <td bgcolor=\"white\" port=\"f%d\"> %d </td></tr>\n",port,b,inodo.i_block[b]);
+                port++;
+            }
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_type </td> <td bgcolor=\"white\"> %c </td>  </tr>\n",inodo.i_type);
+            fprintf(graph, "    <tr> <td bgcolor=\"lightsteelblue\"> i_perm </td> <td bgcolor=\"white\"> %d </td>  </tr>\n",inodo.i_perm);
+            fprintf(graph, "   </table>>]\n\n");
+            //Creamos los bloques relacionados al inodo
+            for (int j = 0; j < 15; j++) {
+                port = 0;
+                if(inodo.i_block[j] != -1){
+                    fseek(fp,super.s_bm_block_start + inodo.i_block[j],SEEK_SET);
+                    buffer = static_cast<char>(fgetc(fp));
+                    if(buffer == '1'){//Bloque carpeta
+                        fseek(fp,super.s_block_start + static_cast<int>(sizeof(BloqueCarpeta))*inodo.i_block[j],SEEK_SET);
+                        fread(&carpeta,sizeof(BloqueCarpeta),1,fp);
+                        fprintf(graph, "    bloque_%d [shape=plaintext fontname=\"Century Gothic\" label=< \n",inodo.i_block[j]);
+                        fprintf(graph, "   <table bgcolor=\"seagreen\" border=\'0\'>\n");
+                        fprintf(graph, "    <tr> <td colspan=\'2\'><b>Folder block %d</b></td></tr>\n",inodo.i_block[j]);
+                        fprintf(graph, "    <tr> <td bgcolor=\"mediumseagreen\"> b_name </td> <td bgcolor=\"mediumseagreen\"> b_inode </td></tr>\n");
+                        for(int c = 0;c < 4; c++){
+                            fprintf(graph, "    <tr> <td bgcolor=\"white\" > %s </td> <td bgcolor=\"white\"  port=\"f%d\"> %d </td></tr>\n",carpeta.b_content[c].b_name,port,carpeta.b_content[c].b_inodo);
+                            port++;
+                        }
+                        fprintf(graph, "   </table>>]\n\n");
+                        //Relacion de bloques a inodos
+                        for(int c = 0; c < 4; c++){
+                            if(carpeta.b_content[c].b_inodo !=-1){
+                                if(strcmp(carpeta.b_content[c].b_name,".")!=0 && strcmp(carpeta.b_content[c].b_name,"..")!=0)
+                                    fprintf(graph, "    bloque_%d:f%d -> inodo_%d;\n",inodo.i_block[j],c,carpeta.b_content[c].b_inodo);
+                            }
+                        }
+                    }else if(buffer == '2'){//Bloque archivo
+                        fseek(fp,super.s_block_start + static_cast<int>(sizeof(BloqueArchivo))*inodo.i_block[j],SEEK_SET);
+                        fread(&archivo,sizeof(BloqueArchivo),1,fp);
+                        fprintf(graph, "    bloque_%d [shape=plaintext fontname=\"Century Gothic\" label=< \n",inodo.i_block[j]);
+                        fprintf(graph, "   <table border=\'0\' bgcolor=\"sandybrown\">\n");
+                        fprintf(graph, "    <tr> <td> <b>File block %d</b></td></tr>\n",inodo.i_block[j]);
+                        fprintf(graph, "    <tr> <td bgcolor=\"white\"> %s </td></tr>\n",archivo.b_content);
+                        fprintf(graph, "   </table>>]\n\n");
+                    }else if(buffer == '3'){//Bloque apuntador
+                        fseek(fp,super.s_block_start + static_cast<int>(sizeof(BloqueApuntadores))*inodo.i_block[j],SEEK_SET);
+                        fread(&apuntador,sizeof(BloqueApuntadores),1,fp);
+                        fprintf(graph, "    bloque_%d [shape=plaintext fontname=\"Century Gothic\" label=< \n",inodo.i_block[j]);
+                        fprintf(graph, "   <table border=\'0\' bgcolor=\"khaki\">\n");
+                        fprintf(graph, "    <tr> <td> <b>Pointer block %d</b></td></tr>\n",inodo.i_block[j]);
+                        for(int a = 0; a < 16; a++){
+                            fprintf(graph, "    <tr> <td bgcolor=\"white\" port=\"f%d\">%d</td> </tr>\n",port,apuntador.b_pointer[a]);
+                            port++;
+                        }
+                        fprintf(graph, "   </table>>]\n\n");
+                        //Bloques carpeta/archivos del bloque de apuntadores
+                        for (int x = 0; x < 16; x++) {
+                            port = 0;
+                            if(apuntador.b_pointer[x] != -1){
+                                fseek(fp,super.s_bm_block_start + apuntador.b_pointer[x],SEEK_SET);
+                                buffer = static_cast<char>(fgetc(fp));
+                                if(buffer == '1'){
+                                    fseek(fp,super.s_block_start + static_cast<int>(sizeof(BloqueCarpeta))*apuntador.b_pointer[x],SEEK_SET);
+                                    fread(&carpeta,sizeof(BloqueCarpeta),1,fp);
+                                    fprintf(graph, "    bloque_%d [shape=plaintext fontname=\"Century Gothic\" label=< \n",apuntador.b_pointer[x]);
+                                    fprintf(graph, "   <table border=\'0\' bgcolor=\"seagreen\" >\n");
+                                    fprintf(graph, "    <tr> <td colspan=\'2\'> <b>Folder block %d</b> </td></tr>\n",apuntador.b_pointer[x]);
+                                    fprintf(graph, "    <tr> <td bgcolor=\"mediumseagreen\"> b_name </td> <td bgcolor=\"mediumseagreen\"> b_inode </td></tr>\n");
+                                    for(int c = 0;c < 4; c++){
+                                        fprintf(graph, "    <tr> <td bgcolor=\"white\"> %s </td> <td bgcolor=\"white\" port=\"f%d\"> %d </td></tr>\n",carpeta.b_content[c].b_name,port,carpeta.b_content[c].b_inodo);
+                                        port++;
+                                    }
+                                    fprintf(graph, "   </table>>]\n\n");
+                                    //Relacion de bloques a inodos
+                                    for(int c = 0; c < 4; c++){
+                                        if(carpeta.b_content[c].b_inodo !=-1){
+                                            if(strcmp(carpeta.b_content[c].b_name,".")!=0 && strcmp(carpeta.b_content[c].b_name,"..")!=0)
+                                                fprintf(graph, "    bloque_%d:f%d -> inodo_%d;\n",apuntador.b_pointer[x],c,carpeta.b_content[c].b_inodo);
+                                        }
+                                    }
+                                }else if(buffer == '2'){
+                                    fseek(fp,super.s_block_start + static_cast<int>(sizeof(BloqueArchivo))*apuntador.b_pointer[x],SEEK_SET);
+                                    fread(&archivo,sizeof(BloqueArchivo),1,fp);
+                                    fprintf(graph, "    bloque_%d [shape=plaintext fontname=\"Century Gothic\" label=< \n",apuntador.b_pointer[x]);
+                                    fprintf(graph, "   <table border=\'0\' bgcolor=\"sandybrown\">\n");
+                                    fprintf(graph, "    <tr> <td> <b>File block %d</b></td></tr>\n",apuntador.b_pointer[x]);
+                                    fprintf(graph, "    <tr> <td bgcolor=\"white\"> %s </td></tr>\n",archivo.b_content);
+                                    fprintf(graph, "   </table>>]\n\n");
+                                }else if(buffer == '3'){
+
+                                }
+                            }
+                        }
+
+                        //Relacion de bloques apuntador a bloques archivos/carpetas
+                        for(int b = 0; b < 16; b++){
+                            if(apuntador.b_pointer[b] != -1)
+                                fprintf(graph, "    bloque_%d:f%d -> bloque_%d;\n",inodo.i_block[j],b,apuntador.b_pointer[b]);
+                        }
+                    }
+                    //Relacion de inodos a bloques
+                    fprintf(graph, "    inodo_%d:f%d -> bloque_%d; \n",i,j,inodo.i_block[j]);
+                }
+            }
+        }
+        i++;
+    }
+
+    fprintf(graph,"\n\n}");
+    fclose(graph);
+
+    fclose(fp);
+
+    string comando = "dot -T"+extension+" grafica.dot -o "+destino;
+    system(comando.c_str());
+    cout << "Reporte Tree generado con exito " << endl;
+}

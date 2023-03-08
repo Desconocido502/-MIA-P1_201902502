@@ -91,6 +91,11 @@ directorio ({diagonal}{id})+
 "remove"                    {  return removeR; }
 "edit"                      {  return edit; }
 "rename"                    {  return renameR; }
+"mkdir"                     {  return Rmkdir; }
+"destino"                   {  return destino; }
+"copy"                      {  return copyR; }
+"move"                      {  return moveR; }
+"recovery"                  {  return recovery; }
 {Entero}                    {  strcpy(yylval.text, yytext); return entero;}
 {Caracter}                  {  strcpy(yylval.text, yytext); return caracter;}
 {Cadena}                    {  strcpy(yylval.text, yytext); return cadena;}

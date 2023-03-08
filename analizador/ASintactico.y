@@ -97,6 +97,11 @@
 %token <text> removeR
 %token <text> edit
 %token <text> renameR
+%token <text> Rmkdir
+%token <text> destino
+%token <text> copyR
+%token <text> moveR
+%token <text> recovery
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -132,6 +137,12 @@
 %type <nodo> PARAM_EDIT
 %type <nodo> RENAME
 %type <nodo> PARAM_RENAME
+%type <nodo> MKDIR
+%type <nodo> PARAM_MKDIR
+%type <nodo> COPY
+%type <nodo> PARAM_COPY
+%type <nodo> MOVE
+%type <nodo> RECOVERY
 
 %start INICIO
 %%
@@ -203,9 +214,25 @@ COMANDO:mkdisk MKDISK
     }
     |renameR RENAME
     {
-        $$ = new Nodo("REN","");
+        $$ = new Nodo("RENAME","");
         $$->add(*$2);
-    };
+    }
+    | Rmkdir MKDIR
+    {
+        $$ = new Nodo("MKDIR","");
+        $$->add(*$2);
+    }
+    |copyR COPY
+    {
+        $$ = new Nodo("COPY","");
+        $$->add(*$2);
+    }
+    |moveR MOVE
+    {
+        $$ = new Nodo("MOVE","");
+        $$->add(*$2);
+    }
+    |RECOVERY { $$ = $1; };
     
 
 MKDISK: MKDISK PARAMETRO_MK {
@@ -510,3 +537,54 @@ PARAM_RENAME:mayor path igual ruta { $$ = new Nodo("path", $4); }
             $$->add(*n);
         }
         |mayor name igual cadena { $$ = new Nodo("name",$4); };
+
+MKDIR: MKDIR PARAM_MKDIR 
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    |PARAM_MKDIR
+    {
+        $$ = new Nodo("PARAMETRO","");
+        $$->add(*$1);
+    };
+
+PARAM_MKDIR:mayor path igual directorioA { $$ = new Nodo("path",$4); }
+            |mayor path igual cadena { $$ = new Nodo("path",$4); }
+            |mayor r { $$ = new Nodo("r",""); };
+
+COPY:COPY PARAM_COPY
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    |PARAM_COPY
+    {
+        $$ = new Nodo("PARAMETRO","");
+        $$->add(*$1);
+    };
+
+PARAM_COPY:mayor path igual ruta { $$ = new Nodo("path",$4); }
+          |mayor path igual cadena { $$ = new Nodo("path",$4); }
+          |mayor path igual directorioA { $$ = new Nodo("path",$4); }
+          |mayor destino igual ruta { $$ = new Nodo("destino",$4); }
+          |mayor destino igual cadena { $$ = new Nodo("destino",$4); }
+          |mayor destino igual directorioA { $$ = new Nodo("destino",$4); };
+    
+MOVE: MOVE PARAM_COPY 
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    | PARAM_COPY
+    {
+        $$ = new Nodo("PARAMETRO","");
+        $$->add(*$1);
+    };
+
+RECOVERY:recovery mayor id igual identificador 
+    {
+        $$ = new Nodo("RECOVERY","");
+        Nodo *n = new Nodo("id",$5);
+        $$->add(*n);
+    };

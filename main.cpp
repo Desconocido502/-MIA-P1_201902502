@@ -23,6 +23,10 @@
 #include "cat.cpp"
 #include "remove.cpp"
 #include "edit.cpp"
+#include "rename.cpp"
+#include "mkdir.cpp"
+#include "copy.cpp"
+#include "move.cpp"
 
 ListaMount *listaMount = new ListaMount();
 bool loggedin = false;
@@ -145,6 +149,12 @@ void reconocerComando(Nodo *root)
         CAT(&n);
     }else if(raiz->tipo == "REMOVE"){
         REMOVE(raiz);
+    }else if(raiz->tipo == "MKDIR"){
+        Nodo n = raiz->hijos.front();
+        MKDIR(&n);
+    }else if(raiz->tipo == "MOVE"){
+        Nodo n = raiz->hijos.front();
+        MOVE(&n);
     }else
     {
         cout << "Comando no reconocido" << endl;
