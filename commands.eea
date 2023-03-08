@@ -36,3 +36,11 @@ mkfs >type=full >id=021Disco1
 login >user=root >pass=123 >id=021Disco1
 mkgrp >name=usuarios
 mkusr >user=user1 >pass=usuario >grp=usuarios
+
+mkfile>size=15 >path=/home/user/docs/a.txt >r
+mkfile>size=15 >path=/home/user/docs/b.txt >r
+mkfile>size=15 >path=/home/user/docs/c.txt >r
+cat >file1=/home/user/docs/a.txt >file2=/home/user/docs/b.txt >file3=/home/user/docs/c.txt
+remove >path=/home/user/docs/a.txt
+remove >path=/home/user/docs/b.txt
+#remove >path=/home/user

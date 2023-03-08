@@ -1,6 +1,7 @@
 %{
     #include <iostream>
     #include <stdlib.h>
+    #include <string>
     #include "scanner.h"
     #include "../nodo.h"
 
@@ -92,6 +93,10 @@
 %token <text> directorioA
 %token <text> mkfile
 %token <text> cont
+%token <text> cat
+%token <text> removeR
+%token <text> edit
+%token <text> renameR
 
 %type <nodo> INICIO
 %type <nodo> COMANDO
@@ -120,6 +125,13 @@
 %type <nodo> PARAM_CHMOD
 %type <nodo> MKFILE
 %type <nodo> PARAM_MKFILE
+%type <nodo> CAT
+%type <nodo> LTS_FILE 
+%type <nodo> REMOVE
+%type <nodo> EDIT
+%type <nodo> PARAM_EDIT
+%type <nodo> RENAME
+%type <nodo> PARAM_RENAME
 
 %start INICIO
 %%
@@ -172,9 +184,26 @@ COMANDO:mkdisk MKDISK
     {
         $$ = new Nodo("CHMOD", "");
         $$->add(*$2);
-    }| mkfile MKFILE 
+    }
+    |mkfile MKFILE 
     {
         $$ = new Nodo("MKFILE","");
+        $$->add(*$2);
+    }
+    |cat CAT
+    {
+        $$ = new Nodo("CAT", "");
+        $$->add(*$2);
+    }
+    |REMOVE { $$=$1; }
+    |edit EDIT 
+    {
+        $$ = new Nodo("EDIT","");
+        $$->add(*$2);
+    }
+    |renameR RENAME
+    {
+        $$ = new Nodo("REN","");
         $$->add(*$2);
     };
     
@@ -412,3 +441,72 @@ PARAM_MKFILE:mayor path igual ruta { $$ = new Nodo("path",$4); }
             |mayor cont igual ruta { $$ = new Nodo("cont",$4); }
             |mayor cont igual cadena { $$ = new Nodo("cont",$4); }
             |mayor r { $$ = new Nodo("r",""); };
+
+CAT: CAT LTS_FILE
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    | LTS_FILE
+    {
+        $$ = new Nodo("PARAMETRO", "");
+        $$->add(*$1);
+    };
+
+LTS_FILE:mayor identificador igual ruta { $$ = new Nodo($2, $4); }
+        |mayor identificador igual cadena { $$ = new Nodo($2, $4); };
+
+REMOVE:removeR mayor path igual ruta 
+    {
+        $$ = new Nodo("REMOVE", "");
+        Nodo *n = new Nodo("path", $5);
+        $$->add(*n);
+    }
+    |removeR mayor path igual cadena
+    {
+        $$ = new Nodo("REMOVE", "");
+        Nodo *n = new Nodo("path", $5);
+        $$->add(*n);
+    }
+    |removeR mayor path igual directorioA
+    {
+        $$ = new Nodo("REMOVE", "");
+        Nodo *n = new Nodo("path", $5);
+        $$->add(*n);
+    };
+
+EDIT: EDIT PARAM_EDIT 
+        {
+            $$ = $1;
+            $$->add(*$2);
+        }
+        |PARAM_EDIT 
+        {
+            $$ = new Nodo("PARAMETRO","");
+            $$->add(*$1);
+        };
+
+PARAM_EDIT:mayor path igual ruta { $$ = new Nodo("path",$4); }
+            |mayor path igual cadena { $$ = new Nodo("path",$4); }
+            |mayor cont igual cadena { $$ = new Nodo("cont", $4); };
+
+RENAME: RENAME PARAM_RENAME 
+    {
+        $$ = $1;
+        $$->add(*$2);
+    }
+    |PARAM_RENAME 
+    {
+        $$ = new Nodo("PARAMETRO","");
+        $$->add(*$1);
+    };
+
+PARAM_RENAME:mayor path igual ruta { $$ = new Nodo("path", $4); }
+        |mayor path igual cadena { $$ = new Nodo("path",$4); }
+        |mayor name igual identificador extension 
+        {
+            $$ = new Nodo("name","");
+            Nodo *n = new Nodo($4,$5);
+            $$->add(*n);
+        }
+        |mayor name igual cadena { $$ = new Nodo("name",$4); };

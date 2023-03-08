@@ -15,11 +15,7 @@ extern Sesion sesionActual;
 int buscarCarpetaArchivo(FILE *fp, char *path);
 int byteInodoBloque(FILE *stream, int pos, char tipo);
 void cambiarPermisosRecursivo(FILE *stream, int n, int permisos);
-/*
-                int propietario = ugo[0] - '0'; // Obtiene el valor numérico del primer carácter de la cadena
-                int grupo = ugo[1] - '0'; // Obtiene el valor numérico del segundo carácter de la cadena
-                int otros = ugo[2] - '0'; // Obtiene el valor numérico del tercer carácter de la cadena
-*/
+
 void CHMOD(Nodo *raiz)
 {
     string path = "";

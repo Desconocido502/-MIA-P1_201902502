@@ -57,11 +57,12 @@ void MKFILE(Nodo *raiz){
             flagR = true;
         }
     }
-
-    cout << "path: " << path << endl;
+    //cout << "path: " << path << endl;
+/*
     cout << "cont: " << cont << endl;
     cout << "size: " << size << endl;
     cout << "r: " << flagR << endl;
+*/
 
     if(path != ""){
         string name = path.substr(path.find_last_of('/') + 1);
@@ -118,7 +119,7 @@ int crearArchivo(string path, bool r, int size, string cont){
     strcpy(auxPath,path.c_str());
     strcpy(auxPath2,path.c_str());
     int existe = buscarCarpetaArchivo(fp,auxPath);
-    cout << "existe(buscarCarpeta/archivo):  " << existe << endl;
+    //cout << "existe(buscarCarpeta/archivo):  " << existe << endl;
     strcpy(auxPath,path.c_str());
     int response = -1;
 

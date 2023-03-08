@@ -20,6 +20,9 @@
 #include "mkusr_rmusr.cpp"
 #include "chmod.cpp"
 #include "mkfile.cpp"
+#include "cat.cpp"
+#include "remove.cpp"
+#include "edit.cpp"
 
 ListaMount *listaMount = new ListaMount();
 bool loggedin = false;
@@ -137,6 +140,11 @@ void reconocerComando(Nodo *root)
     }else if(raiz->tipo == "MKFILE"){
         Nodo n = raiz->hijos.front();
         MKFILE(&n);
+    }else if(raiz->tipo == "CAT"){
+        Nodo n = raiz->hijos.front();
+        CAT(&n);
+    }else if(raiz->tipo == "REMOVE"){
+        REMOVE(raiz);
     }else
     {
         cout << "Comando no reconocido" << endl;

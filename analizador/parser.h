@@ -116,7 +116,11 @@ extern int yydebug;
     Rchmod = 317,                  /* Rchmod  */
     directorioA = 318,             /* directorioA  */
     mkfile = 319,                  /* mkfile  */
-    cont = 320                     /* cont  */
+    cont = 320,                    /* cont  */
+    cat = 321,                     /* cat  */
+    removeR = 322,                 /* removeR  */
+    edit = 323,                    /* edit  */
+    renameR = 324                  /* renameR  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -125,12 +129,12 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 27 "ASintactico.y"
+#line 28 "ASintactico.y"
 
     char text[400];
     class Nodo *nodo;
 
-#line 134 "parser.h"
+#line 138 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
