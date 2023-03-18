@@ -17,6 +17,7 @@ class ListaMount{
         //int buscarLetra(string, string);
         int buscarNumero(string, string);
         string direccion(string);
+        string nombre(string);
         NodoMount* getMount(string id);
         int buscarID(string, string);
         string split_txt(string , char);
@@ -134,6 +135,19 @@ string ListaMount:: direccion(string id){
         tempID += to_string(aux->num) + split_txt(aux->direccion, '/'); //nombreDisco
         if(id == tempID){
             return aux->direccion;
+        }
+        aux = aux->siguiente;
+    }
+    return "NULL";
+}
+
+string ListaMount:: nombre(string id){
+    NodoMount *aux = primero;
+    while(aux != NULL){
+        string tempID = "02";
+        tempID += to_string(aux->num) + split_txt(aux->direccion, '/'); //nombreDisco
+        if(id == tempID){
+            return aux->nombre;
         }
         aux = aux->siguiente;
     }

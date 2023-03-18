@@ -18,6 +18,8 @@ string directorio_(string direccion);
 string extension_(string direccion);
 void leerComando(char *);
 void leerEntrada(string txt);
+string fileName(string direccion);
+
 
 void reporteDisco(string pathDisk, string destinationReport);
 string split_txt(string text);
@@ -112,6 +114,7 @@ void REP(Nodo *raiz)
             if (id != "")
             {
                 string direccion = listaMount->direccion(id);
+                string nombre = listaMount->nombre(id);
                 string ext = extension_(path);
                 if (direccion != "NULL")
                 {
@@ -127,6 +130,36 @@ void REP(Nodo *raiz)
                     else if (name == "disk")
                     {
                         graficarDisk(direccion, path, ext);
+                    }
+                    else if (name == "inode")
+                    {
+                        int index = buscarParticionPE(direccion, nombre);
+                        if (index != -1)
+                        { // Primaria|Extendida
+                            MBR masterboot;
+                            SuperBloque super;
+                            FILE *fp = fopen(direccion.c_str(), "rb+");
+                            fread(&masterboot, sizeof(MBR), 1, fp);
+                            fseek(fp, masterboot.mbr_partition[index].part_start, SEEK_SET);
+                            fread(&super, sizeof(SuperBloque), 1, fp);
+                            fclose(fp);
+                            graficarInodos(direccion, path, ext, super.s_bm_inode_start, super.s_inode_start, super.s_bm_block_start);
+                        }
+                        else
+                        { // Logica
+                            int index = buscarParticionL(direccion, nombre);
+                            if (index != -1)
+                            {
+                                EBR extendedBoot;
+                                SuperBloque super;
+                                FILE *fp = fopen(direccion.c_str(), "rb+");
+                                fseek(fp, index, SEEK_SET);
+                                fread(&extendedBoot, sizeof(EBR), 1, fp);
+                                fread(&super, sizeof(SuperBloque), 1, fp);
+                                fclose(fp);
+                                graficarInodos(direccion, path, ext, super.s_bm_inode_start, super.s_inode_start, super.s_bm_block_start);
+                            }
+                        }
                     }
                     else if (name == "sb")
                     {
@@ -155,6 +188,46 @@ void REP(Nodo *raiz)
                                 graficarSuperBloque(aux->direccion, path, ext, start);
                             }
                         }
+                    }
+                    else if (name == "tree")
+                    {
+                        int index = buscarParticionPE(direccion, nombre);
+                        string destino = directorio_(path) + fileName(path) + ".pdf";
+                        if (index != -1)
+                        {
+                            MBR masterboot;
+                            FILE *fp = fopen(direccion.c_str(), "rb+");
+                            fread(&masterboot, sizeof(MBR), 1, fp);
+                            fseek(fp, masterboot.mbr_partition[index].part_start, SEEK_SET);
+                            fclose(fp);
+                            graficarTree(direccion, path, ext, masterboot.mbr_partition[index].part_start);
+                        }
+                        else
+                        {
+                            int index = buscarParticionL(direccion, nombre);
+                            if (index != -1)
+                            {
+                                EBR extendedBoot;
+                                FILE *fp = fopen(direccion.c_str(), "rb+");
+                                fseek(fp, index, SEEK_SET);
+                                fread(&extendedBoot, sizeof(EBR), 1, fp);
+                                int start = static_cast<int>(ftell(fp));
+                                fclose(fp);
+                                graficarTree(direccion, path, ext, start);
+                            }
+                        }
+                    }else if(name == "Journaling"){
+                        cout << "Reporte Journaling" << endl;
+                    }else if(name == "block"){
+                        cout << "Reporte Block" << endl;
+                    }else if(name == "bm_inode"){
+                        cout << "Reporte bm_inode" << endl;
+                    }else if(name == "bm_block"){                     
+                        cout << "Reporte bm_block" << endl;
+                    }else if(name == "file"){
+                        cout << "Reporte file" << endl;
+                    }else if(name == "ls"){
+                        cout << "Reporte ls" << endl;
                     }
                 }
                 else
@@ -235,4 +308,18 @@ string split_txt(string text)
     string clearName = splited.back();
     clearName = regex_replace(clearName, regex(".dsk"), "");
     return clearName;
+}
+
+string fileName(string direccion){
+    string aux = direccion;
+    string delimiter = "/";
+    size_t pos = 0;
+    string res = "";
+    while((pos = aux.find(delimiter))!=string::npos){
+        aux.erase(0,pos + delimiter.length());
+    }
+    delimiter = ".";
+    pos = aux.find(delimiter);
+    res = aux.substr(0,pos);
+    return res;
 }

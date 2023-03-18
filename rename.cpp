@@ -39,6 +39,7 @@ void RENAME(Nodo *raiz){
         if(name != ""){
             if(loggedin){
                 cout << "estamos en sesion " << endl;
+                cout << "comando rename..." << endl;
             }
         }else
             cout << "ERROR parametro -name no definido" << endl;

@@ -1,0 +1,602 @@
+digraph G{
+
+    nodo_0 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 0</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:50 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:50 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:50 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_1 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 1</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 147 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:51 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:50 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> 2 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> 3 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 755 </td> </tr>
+   </table>>]
+    nodo_2 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 2</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 4 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_3 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 3</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 5 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_4 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 4</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 6 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_5 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 5</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 7 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_6 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 6</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 8 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> 11 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> 16 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_7 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 7</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 9 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_8 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 8</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 10 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_9 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 9</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 12 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_10 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 10</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 13 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_12 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 12</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 15 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_13 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 13</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 17 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_14 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 14</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 18 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_15 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 15</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 19 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_16 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 16</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 20 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_17 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 17</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 21 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_18 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 18</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 22 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_19 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 19</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 23 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> 25 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_20 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 20</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 10 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 24 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_21 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 21</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_22 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 22</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 26 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+    nodo_23 [ shape=none fontname="Century Gothic" label=<
+   <table border='0' cellborder='1' cellspacing='0' bgcolor="royalblue">    <tr> <td colspan='2'> <b>Inodo 23</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_uid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_gid </td> <td bgcolor="white"> 1 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_size </td> <td bgcolor="white"> 5 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_atime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_ctime </td> <td bgcolor="white"> 18/03/23 11:52 </td>  </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_mtime </td> <td bgcolor="white"> 18/03/23 11:52 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_0 </td> <td bgcolor="white"> 27 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_1 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_2 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_3 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_4 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_5 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_6 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_7 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_8 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_9 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_10 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_11 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_12 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_13 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_block_14 </td> <td bgcolor="white"> -1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_type </td> <td bgcolor="white"> 1 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> i_perm </td> <td bgcolor="white"> 664 </td> </tr>
+   </table>>]
+
+}

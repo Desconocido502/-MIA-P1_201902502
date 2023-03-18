@@ -36,6 +36,7 @@ void EDIT(Nodo *raiz){
         if (cont != ""){
            if(loggedin){
             cout << "Estamos dentro de la sesion " << endl;
+            cout << "comando edit..." << endl;
            }
         }else
             cout << "ERROR parametro -cont no definido" << endl;
